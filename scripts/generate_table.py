@@ -22,7 +22,6 @@ There is no "required vs. optional" distinction -- see the note at the top
 of wallets/_feature_registry.yaml.
 """
 import argparse
-import datetime
 import glob
 import os
 import re
@@ -342,8 +341,6 @@ def main():
     table_2_features = [f for f in all_features if f["category"] not in TABLE_1_CATEGORIES]
     wallets = load_wallets(args.wallets_dir)
 
-    now = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-
     if wallets:
         table_1_md = render_table(table_1_features, wallets, include_overview_block=True)
         table_2_md = render_table(table_2_features, wallets, include_overview_block=False)
@@ -362,7 +359,6 @@ def main():
 
 Source of truth for Canton Network wallet providers' supported features and
 assets, per the Wallet Directory Program (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
-Last generated {now}.
 
 **Legend:** ✅ self-attested -- click through to the evidence · 🛡️ *name* verified by an
 independent third party -- click the name for their evidence · ❌ *name* found this claim to

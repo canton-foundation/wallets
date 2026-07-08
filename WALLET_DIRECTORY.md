@@ -8,7 +8,6 @@
 
 Source of truth for Canton Network wallet providers' supported features and
 assets, per the Wallet Directory Program (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
-Last generated 2026-07-08 10:34 UTC.
 
 **Legend:** ✅ self-attested -- click through to the evidence · 🛡️ *name* verified by an
 independent third party -- click the name for their evidence · ❌ *name* found this claim to
