@@ -1,0 +1,308 @@
+# Copy this file to wallets/<your-wallet-name>.yaml (lowercase, hyphenated,
+# e.g. wallets/acme-wallet.yaml) and fill in every field below. See
+# CONTRIBUTING.md for the full walkthrough (evidence files, verification,
+# regenerating the summary page).
+
+name: "Your Wallet Name"
+wallet-name: your-wallet-name    # lowercase, hyphenated -- must match proofs/<wallet-name>/
+website: "https://example.com"
+contact: "you@example.com"      # email or Slack handle
+added: null                     # YYYY-MM-DD
+
+# --- Features ---
+# You don't need to include every id -- omitted ids render as "—" on the
+# Wallet Directory page.
+#
+# freetext features (e.g. wallet_model, assets_supported): give a string or
+# a list of strings directly.
+#
+# boolean features (e.g. cc_support, clear_signing): give a small object:
+#   supported:   true | false
+#   reason:      short text explaining a `false`, e.g. "not applicable to
+#                our product" or "on our roadmap for Q3". Optional, only
+#                used when supported is false -- leave null or omit
+#                otherwise. See CONTRIBUTING.md -> "Marking a feature as
+#                not supported".
+#   proof:       link to your evidence heading in
+#                proofs/your-wallet-name/your-wallet-name-self-attestation.md,
+#                e.g. proofs/your-wallet-name/your-wallet-name-self-attestation.md#cc-support-transfers-and-holding-cc_support
+#                Leave null if you haven't put together evidence yet.
+#   verified_by: list of independent verifications. Leave as [] until a
+#                third party verifies this claim (see CONTRIBUTING.md ->
+#                "Third-party verification"). Each entry:
+#                  - by: Verifier name
+#                    date: "YYYY-MM-DD"
+#                    result: verified | unsupported
+#                    proof: link to their heading in
+#                      proofs/your-wallet-name/your-wallet-name-third-party-attestation.md
+#
+# A few boolean features (generic wallet capabilities that aren't Canton
+# Network specific -- see "self_attested_only" in
+# wallets/_feature_registry.yaml) have no proof/verification mechanism at
+# all. For those, just give `supported` (and `reason` if false) -- omit
+# `proof` and `verified_by` entirely.
+
+
+features:
+  # Wallet Type
+  # Who the wallet is built for.
+  wallet_model: []           # any of: Retail, Enterprise
+  # Who holds the private keys (custodial and/or self-custodial).
+  custody_model: null        # Custodial and / or Self-custodial
+  # Mobile, browser, desktop, browser extension, hardware.
+  form_factor: []            # any of: mobile, browser, desktop, browser-extension, hardware
+  # Self-hosted, SaaS, hybrid, or on-prem.
+  deployment_model: []       # any of: self-hosted, saas, hybrid, on-prem
+
+  # Canton Coin
+  # Send, receive, and hold Canton Coin.
+  # Suggested test: Send CC to and from the wallet. Record the transaction
+  # update IDs and optionally provide screenshots of the holding, transfer,
+  # and party ID.
+  cc_support:
+    supported: false
+    # reason: "<short explanation>"
+    proof: null
+    verified_by: []
+
+  # Auto-accept incoming CC without manual confirmation. Distinct from
+  # registry_preapprovals (App Specific) below.
+  # Suggested test: Enable pre-approvals for CC. Send CC to the wallet
+  # address. Confirm the transfer was auto-accepted. Record the transaction
+  # update IDs and optionally provide screenshots of the holding, transfer,
+  # and party ID.
+  preapprovals:
+    supported: false
+    # reason: "<short explanation>"
+    proof: null
+    verified_by: []
+
+  # Token Standard
+  # Send and receive any CIP-0056 token, not just CC.
+  # Suggested test: Send a CIP-0056-compatible token (not Canton Coin) to and
+  # from the wallet. Record the transaction update IDs and optionally provide
+  # screenshots of the holding, transfer, and party ID.
+  cip_0056_transfer:
+    supported: false
+    # reason: "<short explanation>"
+    proof: null
+    verified_by: []
+
+  ## Support for the allocation half of the CIP-0056 standard, distinct from
+  ## plain transfers.
+  ## Suggested test: Create and settle a CIP-0056 allocation (distinct from a
+  ## plain transfer). Record the transaction update ID(s) for the allocation
+  ## and its settlement, and optionally provide screenshots of the allocation
+  ## before and after settlement.
+  # cip_0056_allocation:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+  
+  ## Support for CIP-112 v2 tokens.
+  ## Suggested test: Send or hold a CIP-112 v2 token in the wallet. Record the
+  ## transaction update ID and optionally provide screenshots of the holding
+  ## and transfer, noting the CIP-112 version in the token metadata.
+  # cip_112_v2:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+  # Interoperability
+  # Connect to and sign transactions from a third-party dApp via CIP-0103.
+  # Suggested test: Connect to a dApp using a CIP-0103 connection. Initiate
+  # a transaction from within the dApp and sign it from the wallet. Confirm
+  # the successful transaction. Optionally provide screenshots or a video
+  # recording.
+  cip_0103_dapp_api:
+    supported: false
+    # reason: "<short explanation>"
+    proof: null
+    verified_by: []
+
+  # Connect to and sign transactions from a third-party dApp via Wallet
+  # Connect.
+  # Suggested test: Connect to a dApp using Wallet Connect. Initiate a
+  # transaction from within the dApp and sign it from the wallet. Confirm
+  # the successful transaction. Optionally provide screenshots or a video
+  # recording.
+  walletconnect_support:
+    supported: false
+    # reason: "<short explanation>"
+    proof: null
+    verified_by: []
+
+  # Attach a memo tag to a transfer, recorded under the
+  # splice.lfdecentralizedtrust.org/reason metadata.
+  # Suggested test: Include a memo tag in an asset transfer (this can be
+  # combined with the cc_support test). Record the transaction update ID
+  # showing the memo tag under the splice.lfdecentralizedtrust.org/reason
+  # metadata in the transaction JSON.
+  memo_tag_support:
+    supported: false
+    # reason: "<short explanation>"
+    proof: null
+    verified_by: []
+
+  # App Specific
+  ## Auto-accept incoming registry-issued (non-CC) assets. Distinct from
+  ## Canton Coin preapprovals.
+  ## Suggested test: Register pre-approvals for a DA Registry issued asset.
+  ## Send the asset to the wallet address. Confirm the asset was
+  ## auto-accepted. Record the transaction update IDs and optionally provide
+  ## screenshots of the holding, transfer, and party ID.
+  # registry_preapprovals:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+  
+  ## Integration with the Wallet Gateway signing driver.
+  ## Suggested test: Integrate with the Wallet Gateway signing driver and
+  ## demonstrate a signed transaction routed through it. Link to the signing
+  ## driver. Optionally provide a screenshot or log excerpt
+  ## showing the wallet handling the signing request.
+  # wallet_gateway_signing_driver:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+  # Party Specific
+  
+  ## Free-text description of how keys are generated (e.g. seed phrase, HSM,
+  ## MPC).
+  # key_generation_method: "Seed phrase (BIP-39)"
+
+  ## Ability to recover a lost key. Not Canton Network specific -- no proof
+  ## needed.
+  # key_recovery:
+  #   supported: true
+  #   # reason: "<short explanation>"
+
+  ## Recovery via trusted guardians/contacts rather than a seed phrase. Not
+  ## Canton Network specific -- no proof needed.
+  # social_recovery:
+  #   supported: true
+  #   # reason: "<short explanation>"
+
+  ## Support for multiple addresses/accounts within one wallet. Not Canton
+  ## Network specific -- no proof needed.
+  # multi_address:
+  #   supported: true
+  #   # reason: "<short explanation>"
+
+  ## Support for parties whose authority is distributed across multiple
+  ## signers.
+  # distributed_parties:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+  
+  # Network relevant features
+
+  ## The wallet enables the merge delegation contract so UTXOs can be
+  ## consolidated on-chain, reducing UTXO bloat.
+  ## Suggested test: Enable the merge delegation contract in the wallet.
+  ## Witness a UTXO consolidation contract on-chain for CC (sender & receiver
+  ## are the same party).
+  # utxo_merge_delegation:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+  # Transaction Signing
+  ## Configurable approval policies before a transaction is signed. Not
+  ## Canton Network specific -- no proof needed.
+  # policy_workflows:
+  #   supported: true
+  #   # reason: "<short explanation>"
+
+  ## MPC-based threshold signing (as distinct from blockchain-native
+  ## multi-sig). Not Canton Network specific -- no proof needed.
+  # threshold_signature_scheme:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  
+  ## Support for hardware signing devices.
+  # hardware_wallet_support:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+
+  # Wallet Capabilities
+
+  ## Compliance capabilities/certifications the wallet supports. Not Canton
+  ## Network specific -- no proof needed.
+  # compliance:
+  #   supported: true
+  #   # reason: "<short explanation>"
+
+  ## Validator hosting, self-hosted or bring-your-own-validator (BYOV). Not
+  ## Canton Network specific -- no proof needed.
+  # validator_hosting:
+  #   supported: true
+  #   # reason: "<short explanation>"
+
+  ## Tokenization capabilities the wallet supports.
+  # tokenization:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+  ## Claiming or minting a reward (e.g. a validator or app reward).
+  ## Suggested test: Demonstrate the wallet claiming or minting a reward (e.g.
+  ## a validator or app reward). Provide the transaction update ID of the
+  ## reward-minting event and a screenshot of the resulting holding.
+  # reward_minting:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+  ## Generate a transfer / proof-of-transfer object for a completed
+  ## transaction.
+  ## Suggested test: Generate a transfer/proof-of-transfer object for a
+  ## completed transaction. Provide the transaction update ID and a screenshot
+  ## or export of the proof object.
+  # transfer_proof:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+  ## The wallet displays human-readable transaction details (not raw
+  ## hex/opaque data) before signing.
+  ## Suggested test: Show the wallet displaying human-readable transaction
+  ## details (not raw hex/opaque data) before signing. Provide a screenshot of
+  ## the clear-signing confirmation screen for a real transaction, alongside
+  ## its transaction update ID.
+  # clear_signing:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+  
+  ## An in-wallet swap between two assets.
+  ## Suggested test: Perform an in-wallet swap between two assets. Provide the
+  ## transaction update ID(s) for the swap and a screenshot of balances before
+  ## and after.
+  # integrated_swaps:
+  #   supported: true
+  #   # reason: "<short explanation>"
+  #   proof: null
+  #   verified_by: []
+
+  ## Free-text list of assets the wallet supports.
+  # assets_supported: ["CC", "USDC (CIP-0056)"]
+  
+  ## Free-text list of languages the wallet's UI supports.
+  # languages_supported: ["English", "Japanese"]

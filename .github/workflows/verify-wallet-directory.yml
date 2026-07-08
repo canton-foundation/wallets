@@ -1,0 +1,32 @@
+name: Verify WALLET_DIRECTORY.md
+
+# Regenerates WALLET_DIRECTORY.md from wallets/*.yaml and fails the PR if the
+# committed file doesn't match. generate_table.py has no dependencies, so
+# this workflow needs no install step -- it just runs the script.
+
+on:
+  pull_request:
+    paths:
+      - "wallets/**"
+      - "scripts/**"
+      - "WALLET_DIRECTORY.md"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate WALLET_DIRECTORY.md
+        run: python3 scripts/generate_table.py
+
+      - name: Fail if WALLET_DIRECTORY.md is out of date
+        run: |
+          if ! git diff --exit-code -- WALLET_DIRECTORY.md; then
+            echo "::error file=WALLET_DIRECTORY.md::WALLET_DIRECTORY.md is out of date with wallets/*.yaml. Run 'python3 scripts/generate_table.py' locally and commit the regenerated file."
+            exit 1
+          fi

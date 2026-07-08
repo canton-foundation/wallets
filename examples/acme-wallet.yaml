@@ -1,0 +1,76 @@
+# EXAMPLE ONLY -- demonstrates the wallets/*.yaml schema and how
+# scripts/generate_table.py renders it. "Acme Wallet" is not a real,
+# endorsed, or claimed wallet. Do not put this file in wallets/.
+# To add a real wallet, copy wallets/TEMPLATE.yaml instead.
+
+name: "Acme Wallet"
+wallet-name: acme-wallet
+website: "https://example.com/acme-wallet"
+contact: "wallet-team@example.com"
+added: "2026-05-15"
+slack_party_scaling_channel_joined: true
+
+features:
+  # Wallet Type
+  wallet_model: [retail]
+  custody_model: self-custodial
+  form_factor: [mobile, browser-extension]
+  deployment_model: [saas]
+
+  # Canton Coin
+  cc_support:
+    supported: true
+    proof: proofs/acme-wallet/acme-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support
+    verified_by:
+      - by: Blockdaemon
+        date: "2026-05-20"
+        result: verified
+        proof: proofs/acme-wallet/acme-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-blockdaemon
+  preapprovals:
+    supported: true
+    proof: proofs/acme-wallet/acme-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals
+    verified_by: []
+
+  # Token Standard
+  cip_0056_transfer:
+    supported: true
+    proof: proofs/acme-wallet/acme-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    verified_by: []
+  cip_112_v2:
+    supported: true
+    proof: null
+    verified_by: []
+
+  # Interoperability
+  cip_0103_dapp_api:
+    supported: true
+    proof: proofs/acme-wallet/acme-wallet-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
+    verified_by: []
+  walletconnect_support:
+    supported: true
+    proof: proofs/acme-wallet/acme-wallet-self-attestation.md#wallet-connect-support-walletconnect_support
+    verified_by: []
+  memo_tag_support:
+    supported: true
+    proof: proofs/acme-wallet/acme-wallet-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support
+    verified_by: []
+
+  # Network relevant features
+  utxo_merge_delegation:
+    supported: false
+    proof: null
+    verified_by: []
+
+  # Party Specific
+  key_recovery:
+    supported: true
+  social_recovery:
+    supported: true
+
+  # Wallet Capabilities
+  clear_signing:
+    supported: true
+    proof: null
+    verified_by: []
+  assets_supported: ["CC", "USDC (CIP-0056)"]
+  languages_supported: ["English", "Spanish"]

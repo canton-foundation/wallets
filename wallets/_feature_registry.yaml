@@ -1,0 +1,261 @@
+# Single source of truth for feature IDs, names, categories, and types.
+#
+# type: boolean -> wallet claims supported: true/false, may attach proof
+#                  and/or third-party verification.
+# type: freetext -> descriptive value (string or list), not a proof-backed
+#                   yes/no claim.
+#
+# self_attested_only: true -> a boolean feature with no proof/verification
+#                  mechanism at all -- generic wallet capabilities that
+#                  aren't Canton Network specific, so there's nothing to
+#                  test against the network. Wallets just set
+#                  supported: true/false (plus reason if false); omit
+#                  proof and verified_by entirely for these ids.
+
+features:
+  # --- Wallet Type ---
+  - id: wallet_model
+    name: "Retail / Enterprise"
+    category: "Wallet Type"
+    type: freetext
+
+  - id: custody_model
+    name: "Custody Type"
+    category: "Wallet Type"
+    type: freetext
+
+  - id: form_factor
+    name: "Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware)"
+    category: "Wallet Type"
+    type: freetext
+
+  - id: deployment_model
+    name: "Deployment Model (Self-hosted / SaaS / Hybrid)"
+    category: "Wallet Type"
+    type: freetext
+
+  # --- Primary Canton Network Features > Canton Coin ---
+  - id: cc_support
+    name: "CC support (transfers and holding)"
+    category: "Canton Coin"
+    type: boolean
+    suggested_test: >
+      Send CC to and from the wallet. Record the transaction update IDs and 
+      optionally provide screenshots of the holding, transfer, and party ID.
+
+  - id: preapprovals
+    name: "Pre-approvals for CC"
+    category: "Canton Coin"
+    type: boolean
+    suggested_test: >
+      Enable pre-approvals for CC. Send CC to the wallet address. Confirm
+      the transfer was auto-accepted. Record the transaction update IDs and
+      optionally provide screenshots of the holding, transfer, and party ID.
+
+  # --- Primary Canton Network Features > Token Standard ---
+  - id: cip_0056_transfer
+    name: "CIP-0056 token standard transfer support"
+    category: "Token Standard"
+    type: boolean
+    suggested_test: >
+      Send a CIP-0056-compatible token (not Canton Coin) to and from the
+      wallet. Record the transaction update IDs and optionally provide 
+      screenshots of the holding, transfer, and party ID.
+
+  - id: cip_0056_allocation
+    name: "CIP-0056 token standard allocation support"
+    category: "Token Standard"
+    type: boolean
+    suggested_test: >
+      Create and settle a CIP-0056 allocation (distinct from a plain
+      transfer). Record the transaction update ID(s) for the allocation and
+      its settlement, and optionally provide screenshots of the allocation 
+      before and after settlement.
+
+  - id: cip_112_v2
+    name: "CIP-112 token standard v2 support"
+    category: "Token Standard"
+    type: boolean
+    suggested_test: >
+      Send or hold a CIP-112 v2 token in the wallet. Record the transaction
+      update ID and optionally provide screenshots of the holding and transfer, noting
+      the CIP-112 version in the token metadata.
+
+  # --- Primary Canton Network Features > Interoperability
+  - id: cip_0103_dapp_api
+    name: "CIP-0103 dApp API support"
+    category: "Interoperability"
+    type: boolean
+    suggested_test: >
+      Connect to a dApp using a CIP-0103 connection. Initiate a transaction
+      from within the dApp and sign it from the wallet. Confirm the
+      successful transaction. Optionally provide screenshots or a video
+      recording.
+
+  - id: walletconnect_support
+    name: "Wallet Connect support"
+    category: "Interoperability"
+    type: boolean
+    suggested_test: >
+      Connect to a dApp using Wallet Connect. Initiate a transaction from
+      within the dApp and sign it from the wallet. Confirm the successful
+      transaction. Optionally provide screenshots or a video recording.
+
+  - id: memo_tag_support
+    name: "Memo tag support for transfers to exchanges"
+    category: "Interoperability"
+    type: boolean
+    suggested_test: >
+      Include a memo tag in an asset transfer (this can be combined with
+      the cc_support test). Record the transaction update ID showing the
+      memo tag under the splice.lfdecentralizedtrust.org/reason metadata in
+      the transaction JSON.
+
+  # --- Other Features > App Specific ---
+  # NOTE: this used to share the "preapprovals" id with the Canton Coin
+  # entry above on the theory that one combined test covered both. Their
+  # suggested_test steps have since diverged (this one is registry-asset
+  # specific), so it's its own id -- a wallet claiming both fills in both
+  # `preapprovals` and `registry_preapprovals` separately.
+  - id: registry_preapprovals
+    name: "Pre-approvals for DA Registry issued assets"
+    category: "App Specific"
+    type: boolean
+    suggested_test: >
+      Register pre-approvals for a DA Registry issued asset. Send the asset to the wallet
+      address. Confirm the asset was auto-accepted. Record the transaction
+      update IDs and optionally provide screenshots of the holding, transfer,
+      and party ID.
+
+  - id: wallet_gateway_signing_driver
+    name: "Wallet Gateway signing driver"
+    category: "App Specific"
+    type: boolean
+    suggested_test: >
+      Integrate with the Wallet Gateway signing driver and demonstrate a
+      signed transaction routed through it. Link to the signing driver. 
+      Record the transaction update ID and the Wallet Gateway 
+      request/session ID, and optinoally provide a screenshot or log 
+      excerpt showing the driver handling the signing request.
+
+  # --- Other Features > Party Specific ---
+  - id: key_generation_method
+    name: "Key generation method"
+    category: "Party Specific"
+    type: freetext
+
+  - id: key_recovery
+    name: "Key recovery"
+    category: "Party Specific"
+    type: boolean
+    self_attested_only: true
+
+  - id: social_recovery
+    name: "Social recovery"
+    category: "Party Specific"
+    type: boolean
+    self_attested_only: true
+
+  - id: multi_address
+    name: "Multi-address / account"
+    category: "Party Specific"
+    type: boolean
+    self_attested_only: true
+
+  - id: distributed_parties
+    name: "Distributed parties"
+    category: "Party Specific"
+    type: boolean
+
+  # --- Other Features > Network relevant features ---
+  - id: utxo_merge_delegation
+    name: "UTXO merge delegation contract enabled"
+    category: "Network relevant features"
+    type: boolean
+    suggested_test: >
+      Enable the merge delegation contract in the wallet. Witness a UTXO
+      consolidation contract on-chain for CC (sender & receiver are the
+      same party).
+
+  # --- Other Features > Transaction Signing ---
+  - id: policy_workflows
+    name: "Policy workflows"
+    category: "Transaction Signing"
+    type: boolean
+    self_attested_only: true
+
+  - id: threshold_signature_scheme
+    name: "Threshold Signature Scheme"
+    category: "Transaction Signing"
+    type: boolean
+    self_attested_only: true
+
+  - id: hardware_wallet_support
+    name: "Hardware wallet support"
+    category: "Transaction Signing"
+    type: boolean
+
+  # --- Other Features > Wallet Capabilities ---
+  - id: compliance
+    name: "Compliance"
+    category: "Wallet Capabilities"
+    type: boolean
+    self_attested_only: true
+
+  - id: validator_hosting
+    name: "Validator hosting (self-hosted / BYOV)"
+    category: "Wallet Capabilities"
+    type: boolean
+    self_attested_only: true
+
+  - id: tokenization
+    name: "Tokenization"
+    category: "Wallet Capabilities"
+    type: boolean
+
+  - id: reward_minting
+    name: "Reward minting"
+    category: "Wallet Capabilities"
+    type: boolean
+    suggested_test: >
+      Demonstrate the wallet claiming or minting a reward (e.g., a
+      validator or app reward). Provide the transaction update ID of the
+      reward-minting event and a screenshot of the resulting holding.
+
+  - id: transfer_proof
+    name: "Transfer object / proof of transfer support"
+    category: "Wallet Capabilities"
+    type: boolean
+    suggested_test: >
+      Generate a transfer/proof-of-transfer object for a completed
+      transaction. Provide the transaction update ID and a screenshot 
+      or export of the proof object.
+
+  - id: clear_signing
+    name: "Clear signing"
+    category: "Wallet Capabilities"
+    type: boolean
+    suggested_test: >
+      Show the wallet displaying human-readable transaction details (not
+      raw hex/opaque data) before signing. Provide a screenshot of the
+      clear-signing confirmation screen for a real transaction, alongside
+      its transaction update ID.
+
+  - id: integrated_swaps
+    name: "Integrated swaps"
+    category: "Wallet Capabilities"
+    type: boolean
+    suggested_test: >
+      Perform an in-wallet swap between two assets. Provide the
+      transaction update ID(s) for the swap and a screenshot of balances
+      before and after.
+
+  - id: assets_supported
+    name: "Assets supported"
+    category: "Wallet Capabilities"
+    type: freetext
+
+  - id: languages_supported
+    name: "Languages supported"
+    category: "Wallet Capabilities"
+    type: freetext
