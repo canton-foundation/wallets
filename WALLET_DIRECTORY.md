@@ -28,7 +28,7 @@ be unsupported, contradicting the wallet -- click the name for their evidence ·
 | &nbsp;&nbsp;&nbsp;&nbsp;Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware) | browser, mobile |
 | &nbsp;&nbsp;&nbsp;&nbsp;Deployment Model (Self-hosted / SaaS / Hybrid) | saas, hybrid |
 | **Canton Coin** |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;CC support (transfers and holding) | [✅](proofs/dummy-wallet/dummy-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support) 🛡️[Blockdaemon](proofs/dummy-wallet/dummy-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-blockdaemon) |
+| &nbsp;&nbsp;&nbsp;&nbsp;CC support (transfers and holding) | [✅](proofs/dummy-wallet/dummy-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support) 🛡️[ThirdParty](proofs/dummy-wallet/dummy-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-thirdparty) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Pre-approvals for CC | [✅](proofs/dummy-wallet/dummy-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals) |
 | **Token Standard** |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-0056 token standard transfer support | [✅](proofs/dummy-wallet/dummy-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer) |

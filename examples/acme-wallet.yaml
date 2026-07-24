@@ -25,7 +25,7 @@ features:
       - by: Blockdaemon
         date: "2026-05-20"
         result: verified
-        proof: proofs/acme-wallet/acme-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-blockdaemon
+        proof: proofs/acme-wallet/acme-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-thirdparty
   preapprovals:
     supported: true
     proof: proofs/acme-wallet/acme-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals

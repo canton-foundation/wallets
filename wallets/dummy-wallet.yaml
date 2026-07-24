@@ -23,10 +23,10 @@ features:
     supported: true
     proof: proofs/dummy-wallet/dummy-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support
     verified_by:
-      - by: Blockdaemon
+      - by: ThirdParty
         date: "2026-06-05"
         result: verified
-        proof: proofs/dummy-wallet/dummy-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-blockdaemon
+        proof: proofs/dummy-wallet/dummy-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-thirdparty
   preapprovals:
     supported: true
     proof: proofs/dummy-wallet/dummy-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals
