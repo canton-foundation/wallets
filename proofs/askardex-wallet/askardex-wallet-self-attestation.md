@@ -17,6 +17,7 @@ All tests performed on Canton Network MainNet (Splice 0.6.x, Migration ID 4).
 - Transaction update ID(s): `122022d759ba9ea73aaba82e70a5ca3ebed9ce3ab4946e4f7e526e79f953f2df6b38`
 - Party ID(s): `b2a11d907944-askardex::1220bd53dd8475646097f233957b61695a91e2b5a1882e393337e321f9e89097a96f`
 - Explorer link(s): https://www.cantonscan.com/update/122022d759ba9ea73aaba82e70a5ca3ebed9ce3ab4946e4f7e526e79f953f2df6b38
+- Screenshot(s) / video: ![homepage](./askardex-wallet-self-attestation-images/homepage.jpeg) ![activity](./askardex-wallet-self-attestation-images/activity_page.jpeg)
 - Notes: 8.709 CC sent to Cantex (external party), 2026-07-24. Askardex Wallet is a Featured App on Canton Network MainNet.
 
 ---
@@ -32,6 +33,7 @@ All tests performed on Canton Network MainNet (Splice 0.6.x, Migration ID 4).
 - Transaction update ID(s): `122022d759ba9ea73aaba82e70a5ca3ebed9ce3ab4946e4f7e526e79f953f2df6b38`
 - Party ID(s): `b2a11d907944-askardex::1220bd53dd8475646097f233957b61695a91e2b5a1882e393337e321f9e89097a96f`
 - Explorer link(s): https://www.cantonscan.com/update/122022d759ba9ea73aaba82e70a5ca3ebed9ce3ab4946e4f7e526e79f953f2df6b38
+- Screenshot(s) / video: ![accept-reject](./askardex-wallet-self-attestation-images/accept_reject_page.jpeg)
 - Notes: Pre-approvals configurable per-party under Wallet Settings in the Askardex mobile app. Incoming CC transfers are auto-settled without manual confirmation when enabled.
 
 ---
@@ -54,6 +56,7 @@ Four CIP-0056 tokens tested on mainnet:
 **CBTC**
 - Transaction update ID(s): `1220c7a49bf822d3ceaa4c1752c8e9d7ddbc118a0470aef658e1cc4d2fb906186e38`
 - Explorer link(s): https://www.cantonscan.com/update/1220c7a49bf822d3ceaa4c1752c8e9d7ddbc118a0470aef658e1cc4d2fb906186e38
+- Screenshot(s) / video: ![cip56-tx](./askardex-wallet-self-attestation-images/cip56_transactin.jpeg) ![confirm-transfer](./askardex-wallet-self-attestation-images/confirm_transfer.jpeg)
 - Notes: 0.00014 CBTC transferred, 2026-06-25.
 
 **CETH**
@@ -64,7 +67,8 @@ Four CIP-0056 tokens tested on mainnet:
 **HANDL**
 - Transaction update ID(s): `122007120f4fa68bb74c01f7593e597921b89e2831502ddaecacab57d621c0dcb2d0`
 - Explorer link(s): https://www.cantonscan.com/update/122007120f4fa68bb74c01f7593e597921b89e2831502ddaecacab57d621c0dcb2d0
-- Notes: 1.0 HANDL transferred, 2026-07-24.
+- Screenshot(s) / video: ![homepage-assets](./askardex-wallet-self-attestation-images/homepage.jpeg) ![asset-page](./askardex-wallet-self-attestation-images/asset_page.jpeg)
+- Notes: 1.0 HANDL transferred, 2026-07-24. Homepage shows all CIP-0056 tokens held: CBTC, CETH, HANDL, USDCX.
 
 ---
 
@@ -110,7 +114,8 @@ Four CIP-0056 tokens tested on mainnet:
 - Transaction update ID(s): `1220581555b1a11d6765fc474e59ce30999bc1e9cfed4560d1373a4d93451dfbf670`
 - Party ID(s): `b2a11d907944-askardex::1220bd53dd8475646097f233957b61695a91e2b5a1882e393337e321f9e89097a96f`
 - Explorer link(s): https://www.cantonscan.com/update/1220581555b1a11d6765fc474e59ce30999bc1e9cfed4560d1373a4d93451dfbf670
-- Notes: Memo tag "bos" sent with a CC transfer, 2026-07-22. Stored under `splice.lfdecentralizedtrust.org/reason` in the on-chain transaction JSON.
+- Screenshot(s) / video: ![confirm-memo](./askardex-wallet-self-attestation-images/confirm_transfer.jpeg)
+- Notes: Memo tag "bos" sent with a CC transfer, 2026-07-22. Stored under `splice.lfdecentralizedtrust.org/reason` in the on-chain transaction JSON. The confirm transfer screen shows the Memo field before signing.
 
 ---
 
@@ -125,6 +130,7 @@ Four CIP-0056 tokens tested on mainnet:
 - Transaction update ID(s): `12205bce3e4c227fc6241981bf4b7d26812e04f3dc316053a8a09fb798430ac9f4cf`
 - Party ID(s): `askardex-validator-1::1220f9c81d6050a74509010597b3c38fde6d01473f6c323c60ca8bb8b5d489bb9696`
 - Explorer link(s): https://www.cantonscan.com/update/12205bce3e4c227fc6241981bf4b7d26812e04f3dc316053a8a09fb798430ac9f4cf
+- Screenshot(s) / video: ![activity](./askardex-wallet-self-attestation-images/activity_page.jpeg)
 - Notes: Featured App reward coupon claimed — 19.39 CC, round 105499, 2026-07-21. Askardex is a Canton Network Featured App; the wallet displays reward amounts and on-chain update IDs in the transaction history.
 
 ---
@@ -143,11 +149,14 @@ Three transaction types tested — all show recipient party, amount, fee breakdo
 **Single Gift** (3.93 CC, 2026-07-24)
 - Transaction update ID(s): `12200f64bf744c4267dcd1d107eab31df48a212aec299261bd8fce6016c7a3786d1a`
 - Explorer link(s): https://www.cantonscan.com/update/12200f64bf744c4267dcd1d107eab31df48a212aec299261bd8fce6016c7a3786d1a
+- Screenshot(s) / video: ![single-gift](./askardex-wallet-self-attestation-images/single_gift_page.jpeg) ![gift-template](./askardex-wallet-self-attestation-images/gifcard_template.jpeg)
 
 **Multi-claim Gift Pool** (2 × 1.0 CC per claim, 2026-07-24)
 - Transaction update ID(s): `122088a3b96881e1c5eef7634c93521380ecab36c64919406f616112eaa077cf1e2c`
 - Explorer link(s): https://www.cantonscan.com/update/122088a3b96881e1c5eef7634c93521380ecab36c64919406f616112eaa077cf1e2c
+- Screenshot(s) / video: ![multi-gift](./askardex-wallet-self-attestation-images/multi_gift_page.jpeg)
 
 **Lucky Gift** (80 CC total: 30 × 1 CC regular + 1 × 50 CC lucky prize, 2026-07-25)
 - Transaction update ID(s): `12201ef24e49439d9f7c3246e8247020d572db8386db9d6aa9174893aae30970e2a1`
 - Explorer link(s): https://www.cantonscan.com/update/12201ef24e49439d9f7c3246e8247020d572db8386db9d6aa9174893aae30970e2a1
+- Screenshot(s) / video: ![lucky-gift](./askardex-wallet-self-attestation-images/lucky_gift_page.jpeg) ![preview-lucky](./askardex-wallet-self-attestation-images/preview_lucky_gift.jpeg)
