@@ -23,7 +23,7 @@ be unsupported, contradicting the wallet -- click the name for their evidence ·
 | &nbsp;&nbsp;&nbsp;&nbsp;Website | [https://wallet.askardex.com](https://wallet.askardex.com) | [https://example.com/dummy-wallet](https://example.com/dummy-wallet) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Added | 2026-07-25 | 2026-06-10 |
 | **Wallet Type** |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Retail / Enterprise | Enterprise | retail, enterprise |
+| &nbsp;&nbsp;&nbsp;&nbsp;Retail / Enterprise | Retail | retail, enterprise |
 | &nbsp;&nbsp;&nbsp;&nbsp;Custody Type | Self-custodial | self-custodial |
 | &nbsp;&nbsp;&nbsp;&nbsp;Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware) | mobile | browser, mobile |
 | &nbsp;&nbsp;&nbsp;&nbsp;Deployment Model (Self-hosted / SaaS / Hybrid) | saas | saas, hybrid |
