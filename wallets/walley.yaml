@@ -1,0 +1,124 @@
+name: "Walley"
+wallet-name: walley
+website: "https://walley.cc"
+contact: "admin@k2flabs.com"
+added: "2026-07-27"
+slack_party_scaling_channel_joined: true
+
+features:
+  # Wallet Type
+  wallet_model: [retail]
+  custody_model: self-custodial
+  form_factor: [browser]
+  deployment_model: [saas]
+
+  # Canton Coin
+  cc_support:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#cc-support-transfers-and-holding-cc_support
+    verified_by: []
+  preapprovals:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#pre-approvals-for-cc-preapprovals
+    verified_by: []
+
+  # Token Standard
+  cip_0056_transfer:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    verified_by: []
+  cip_0056_allocation:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#cip-0056-token-standard-allocation-support-cip_0056_allocation
+    verified_by: []
+  cip_112_v2:
+    supported: false
+    reason: "Walley implements the v1 token standard interfaces only. CIP-112 v2 is not implemented yet."
+    proof: null
+    verified_by: []
+
+  # Interoperability
+  cip_0103_dapp_api:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
+    verified_by: []
+  walletconnect_support:
+    supported: false
+    reason: "dApps connect to Walley through the CIP-0103 provider adapter. WalletConnect is used only to attach an external Ethereum wallet for USDCx bridging, never for dApp sessions with Walley."
+    proof: null
+    verified_by: []
+  memo_tag_support:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support
+    verified_by: []
+
+  # App Specific
+  registry_preapprovals:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#pre-approvals-for-da-registry-issued-assets-registry_preapprovals
+    verified_by: []
+  wallet_gateway_signing_driver:
+    supported: false
+    reason: "Not integrated. Walley signs in the browser with its own passkey-derived key."
+    proof: null
+    verified_by: []
+
+  # Party Specific
+  key_generation_method: "WebAuthn passkey PRF secret, expanded with HKDF-SHA512 into an Ed25519 signing key that is generated and held in the browser. A 24-word BIP-39 phrase backs up the same secret."
+  key_recovery:
+    supported: true
+  social_recovery:
+    supported: false
+    reason: "Recovery is by 24-word BIP-39 phrase. There is no guardian or trusted-contact scheme."
+  multi_address:
+    supported: false
+    reason: "One party per passkey credential."
+  distributed_parties:
+    supported: false
+    reason: "Each party has a single signing key. Distributed party authority is not offered."
+    proof: null
+    verified_by: []
+
+  # Network relevant features
+  utxo_merge_delegation:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#utxo-merge-delegation-contract-enabled-utxo_merge_delegation
+    verified_by: []
+
+  # Transaction Signing
+  policy_workflows:
+    supported: false
+    reason: "Every transaction is approved individually by the key holder. There are no configurable approval policies."
+  threshold_signature_scheme:
+    supported: false
+    reason: "Single Ed25519 key per party. No MPC or threshold signing."
+  hardware_wallet_support:
+    supported: false
+    reason: "Signing uses a WebAuthn passkey with the PRF extension rather than a dedicated hardware signing device."
+    proof: null
+    verified_by: []
+
+  # Wallet Capabilities
+  validator_hosting:
+    supported: false
+    reason: "Walley hosts every user party on its own validator. Bring-your-own-validator is not offered."
+  reward_minting:
+    supported: false
+    reason: "Walley does not claim or mint validator or app rewards on behalf of users."
+    proof: null
+    verified_by: []
+  transfer_proof:
+    supported: false
+    reason: "Transaction history is viewable in the app, but Walley does not export a proof-of-transfer object."
+    proof: null
+    verified_by: []
+  clear_signing:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#clear-signing-clear_signing
+    verified_by: []
+  integrated_swaps:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#integrated-swaps-integrated_swaps
+    verified_by: []
+  assets_supported: ["CC", "USDCx", "CBTC", "cETH", "SBC", "raUSD", "HANDL", "EDELx", "USDM1", "TRKX index tokens", "Tradecraft LP tokens", "any CIP-0056 token in the Walley registry (79 live at api.walley.cc/v1/tokens)"]
+  languages_supported: ["English"]
