@@ -11,10 +11,11 @@ The evidence below is drawn from publicly reachable sources: the product
 documentation at [docs.walley.cc](https://docs.walley.cc), the public REST API
 at `api.walley.cc` (including its Swagger UI at
 <https://api.walley.cc/swagger-ui/>), and the published dApp SDK package on
-npm. The Walley application source is a private repository, so no source links
-are given. Transaction update IDs are not published in this submission; they
-can be supplied on request, and every claim below is reproducible by a verifier
-against MainNet using the registry's suggested test.
+npm. Every claim is reproducible by a verifier against MainNet using the
+registry's suggested test. Joel Lovera at Digital Asset is familiar with
+Walley's feature support and can attest to the claims below. Transaction
+update IDs are not published in this submission and can be supplied on
+request.
 
 ---
 
