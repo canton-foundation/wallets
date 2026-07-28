@@ -64,7 +64,7 @@ verifiers.
 
 1. Copy `wallets/TEMPLATE.yaml` to `wallets/<your-wallet-name>.yaml` and
    fill it in -- every feature is already listed there with a description
-   and suggested test, in order. See `examples/acme-wallet.yaml` for a 
+   and suggested test, in order. See `examples/dummy-wallet.yaml` for a 
    worked (fictional) example.
 2. Copy `proofs/_TEMPLATE/TEMPLATE-self-attestation.md` to
    `proofs/<your-wallet-name>/<your-wallet-name>-self-attestation.md` and
@@ -74,7 +74,7 @@ verifiers.
    (create that folder alongside the `.md` file) and reference them from
    your heading. Unproven claims are allowed, but evidence makes your
    listing more credible to readers. See
-   `proofs/dummy-wallet/dummy-wallet-self-attestation.md` for a worked
+   `examples/dummy-wallet-self-attestation.md` for a worked
    example. Reference the resulting file + heading anchor in that
    feature's `proof:` field in your wallet YAML.
 
