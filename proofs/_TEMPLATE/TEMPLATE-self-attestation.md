@@ -11,7 +11,7 @@ features you're backing with evidence; screenshots go in
 
 ---
 
-## CC support (transfers and holding) `cc_support`
+## CC support `cc_support`
 
 > Send, receive, and hold Canton Coin.
 >
@@ -35,6 +35,22 @@ languages_supported), and self_attested_only boolean features -- generic
 wallet capabilities that aren't Canton Network specific (see
 wallets/_feature_registry.yaml). Just set `supported` in your wallet YAML
 for those; no proof, no heading, no verification.
+-->
+
+<!--
+## Two-step CC transfers `two_step_cc_transfers`
+
+> Perform a two-step CC transfer (propose/create followed by a separate
+> accept/settle step, rather than a single atomic send).
+>
+> Suggested test: Perform a two-step CC transfer. Record the transaction
+> update ID(s) for both steps and optionally provide screenshots of each.
+
+- Transaction update ID(s):
+- Party ID(s):
+- Explorer link(s):
+- Screenshot(s) / video: ![description](./your-wallet-name-self-attestation-images/two_step_cc_transfers-description.png)
+- Notes:
 -->
 
 <!--
@@ -106,6 +122,24 @@ for those; no proof, no heading, no verification.
 -->
 
 <!--
+## Memo tag support for transfers to omnibus accounts `memo_tag_support`
+
+> Attach a memo tag to a transfer, recorded under the
+> splice.lfdecentralizedtrust.org/reason metadata.
+>
+> Suggested test: Include a memo tag in an asset transfer (this can be
+> combined with the cc_support test). Record the transaction update ID showing
+> the memo tag under the splice.lfdecentralizedtrust.org/reason metadata in
+> the transaction JSON.
+
+- Transaction update ID(s):
+- Party ID(s):
+- Explorer link(s):
+- Screenshot(s) / video: ![description](./your-wallet-name-self-attestation-images/memo_tag_support-description.png)
+- Notes:
+-->
+
+<!--
 ## CIP-0103 dApp API support `cip_0103_dapp_api`
 
 > Connect to and sign transactions from a third-party dApp via CIP-0103.
@@ -137,24 +171,6 @@ for those; no proof, no heading, no verification.
 - Party ID(s):
 - Explorer link(s):
 - Screenshot(s) / video: ![description](./your-wallet-name-self-attestation-images/walletconnect_support-description.png)
-- Notes:
--->
-
-<!--
-## Memo tag support for transfers to exchanges `memo_tag_support`
-
-> Attach a memo tag to a transfer, recorded under the
-> splice.lfdecentralizedtrust.org/reason metadata.
->
-> Suggested test: Include a memo tag in an asset transfer (this can be
-> combined with the cc_support test). Record the transaction update ID showing
-> the memo tag under the splice.lfdecentralizedtrust.org/reason metadata in
-> the transaction JSON.
-
-- Transaction update ID(s):
-- Party ID(s):
-- Explorer link(s):
-- Screenshot(s) / video: ![description](./your-wallet-name-self-attestation-images/memo_tag_support-description.png)
 - Notes:
 -->
 

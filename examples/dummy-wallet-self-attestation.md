@@ -9,7 +9,7 @@ placeholder data, not a real transaction record. -->
 
 ---
 
-## CC support (transfers and holding) `cc_support`
+## CC support `cc_support`
 
 > Send, receive, and hold Canton Coin.
 >
@@ -22,6 +22,20 @@ placeholder data, not a real transaction record. -->
 - Explorer link(s): https://scan.example.com/tx/1220a1b2c3d4e5f6...dummy-cc-holding
 - Screenshot(s) / video: ![holding](./dummy-wallet-self-attestation-images/cc_support-holding.png)
 - Notes: Round-trip transfer performed on Canton MainNet.
+
+## Two-step CC transfers `two_step_cc_transfers`
+
+> Perform a two-step CC transfer (propose/create followed by a separate
+> accept/settle step, rather than a single atomic send).
+>
+> Suggested test: Perform a two-step CC transfer. Record the transaction
+> update ID(s) for both steps and optionally provide screenshots of each.
+
+- Transaction update ID(s): `1220a2b3c4d5e6f7...dummy-2step-propose`, `1220b3c4d5e6f7a8...dummy-2step-accept`
+- Party ID(s): `dummy-wallet-party-1::1220...`
+- Explorer link(s): https://scan.example.com/tx/1220a2b3c4d5e6f7...dummy-2step-propose
+- Screenshot(s) / video: ![two-step](./dummy-wallet-self-attestation-images/two_step_cc_transfers-propose-accept.png)
+- Notes: Proposed the transfer, then accepted it as a separate step, confirmed on Canton MainNet.
 
 ## Pre-approvals for CC `preapprovals`
 
@@ -68,7 +82,7 @@ placeholder data, not a real transaction record. -->
 - Screenshot(s) / video: ![dapp-connect](./dummy-wallet-self-attestation-images/cip_0103_dapp_api-session.png)
 - Notes: Connected to a sample dApp via CIP-0103 and signed a transaction initiated from it.
 
-## Memo tag support for transfers to exchanges `memo_tag_support`
+## Memo tag support for transfers to omnibus accounts `memo_tag_support`
 
 > Attach a memo tag to a transfer, recorded under the
 > splice.lfdecentralizedtrust.org/reason metadata.

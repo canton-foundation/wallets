@@ -47,7 +47,7 @@ verifiers.
   Each heading covers one feature, formatted exactly as it appears in
   `wallets/_feature_registry.yaml`, e.g.:
   ```markdown
-  ## CC support (transfers and holding) `cc_support`
+  ## CC support `cc_support`
   ```
   In the third-party attestation file, each heading also names the verifier 
   and the outcome (see "Third-party verification" below), and is unique per

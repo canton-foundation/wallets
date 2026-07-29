@@ -28,16 +28,17 @@ be unsupported, contradicting the wallet -- click the name for their evidence ·
 | &nbsp;&nbsp;&nbsp;&nbsp;Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware) | browser | browser, mobile, browser-extension |
 | &nbsp;&nbsp;&nbsp;&nbsp;Deployment Model (Self-hosted / SaaS / Hybrid) | self-hosted, saas, hybrid | saas |
 | **Canton Coin** |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;CC support (transfers and holding) | [✅](proofs/dfns/dfns-self-attestation.md#cc-support-transfers-and-holding-cc_support) | ✅ |
+| &nbsp;&nbsp;&nbsp;&nbsp;CC support | [✅](proofs/dfns/dfns-self-attestation.md#cc-support-cc_support) | ✅ |
+| &nbsp;&nbsp;&nbsp;&nbsp;Two-step CC transfers | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Pre-approvals for CC | [✅](proofs/dfns/dfns-self-attestation.md#pre-approvals-for-cc-preapprovals) | ✅ |
 | **Token Standard** |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-0056 token standard transfer support | [✅](proofs/dfns/dfns-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer) | ✅ |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-0056 token standard allocation support | — | ✅ |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-112 token standard v2 support | — | ✅ |
-| **Interoperability** |  |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Memo tag support for transfers to omnibus accounts | [✅](proofs/dfns/dfns-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support) | ✅ |
+| **dApp Connectivity (CIP-103)** |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-0103 dApp API support | — | ✅ |
 | &nbsp;&nbsp;&nbsp;&nbsp;Wallet Connect support | [✅](proofs/dfns/dfns-self-attestation.md#wallet-connect-support-walletconnect_support) | ✅ |
-| &nbsp;&nbsp;&nbsp;&nbsp;Memo tag support for transfers to exchanges | [✅](proofs/dfns/dfns-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support) | ✅ |
 
 ## Other Features
 
@@ -52,15 +53,18 @@ be unsupported, contradicting the wallet -- click the name for their evidence ·
 | &nbsp;&nbsp;&nbsp;&nbsp;Social recovery | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Multi-address / account | ✅ | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Distributed parties | — | — |
-| **Network relevant features** |  |  |
+| **Network Relevant Features** |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;UTXO merge delegation contract enabled | — | — |
+| **Validator Hosting** |  |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;Bring-Your-Own-Validator (BYOV) | ✅ | — |
+| &nbsp;&nbsp;&nbsp;&nbsp;Private validator | — | — |
+| &nbsp;&nbsp;&nbsp;&nbsp;Shared validator | — | — |
 | **Transaction Signing** |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;Policy workflows | ✅ | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Threshold Signature Scheme | ✅ | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Hardware wallet support | [✅](proofs/dfns/dfns-self-attestation.md#hardware-wallet-support-hardware_wallet_support) | ✅ |
 | **Wallet Capabilities** |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;Compliance | ✅ | — |
-| &nbsp;&nbsp;&nbsp;&nbsp;Validator hosting (self-hosted / BYOV) | ✅ | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Tokenization | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Reward minting | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Transfer object / proof of transfer support | — | — |

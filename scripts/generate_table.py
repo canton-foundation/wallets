@@ -17,7 +17,8 @@ regenerated WALLET_DIRECTORY.md alongside your change.
 
 Output is two tables, matching the split in Feature List.md: "Wallet
 Overview & Primary Canton Network Features" (Wallet Type, Canton Coin,
-Token Standard, Interoperability) and "Other Features" (everything else).
+Token Standard, dApp Connectivity (CIP-103)) and "Other Features"
+(everything else).
 There is no "required vs. optional" distinction -- see the note at the top
 of wallets/_feature_registry.yaml.
 """
@@ -30,7 +31,7 @@ INDENT = "&nbsp;&nbsp;&nbsp;&nbsp;"
 
 # Categories that make up table 1, "Wallet Overview & Primary Canton
 # Network Features" -- everything else goes in table 2, "Other Features".
-TABLE_1_CATEGORIES = {"Wallet Type", "Canton Coin", "Token Standard", "Interoperability"}
+TABLE_1_CATEGORIES = {"Wallet Type", "Canton Coin", "Token Standard", "dApp Connectivity (CIP-103)"}
 
 
 # --- Minimal YAML reader -----------------------------------------------

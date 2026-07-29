@@ -15,7 +15,7 @@ genuinely can't tell either way, don't add anything -- see CONTRIBUTING.md
 
 ---
 
-## CC support (transfers and holding) `cc_support` — Verified by <Verifier Name>
+## CC support `cc_support` — Verified by <Verifier Name>
 
 > Send, receive, and hold Canton Coin.
 >
@@ -34,7 +34,7 @@ Date verified: YYYY-MM-DD
 - Notes:
 
 <!--
-## CC support (transfers and holding) `cc_support` — Unsupported by <Verifier Name>
+## CC support `cc_support` — Unsupported by <Verifier Name>
 
 > Send, receive, and hold Canton Coin.
 >
@@ -62,6 +62,23 @@ way, don't add a block at all -- see CONTRIBUTING.md -> "Unverified
 features". self_attested_only boolean features (see
 wallets/_feature_registry.yaml) have no verification mechanism at all --
 there's nothing to independently test, so there's no block for them here.
+-->
+
+<!--
+## Two-step CC transfers `two_step_cc_transfers` — Verified by <Verifier Name>
+
+> Perform a two-step CC transfer (propose/create followed by a separate
+> accept/settle step, rather than a single atomic send).
+
+Verifier: <Verifier name or org>
+Contact: <email or Slack handle>
+Date verified: YYYY-MM-DD
+
+- Transaction update ID(s):
+- Party ID(s):
+- Explorer link(s):
+- Screenshot(s) / video: ![description](./your-wallet-name-third-party-attestation-images/two_step_cc_transfers-verifier-name-description.png)
+- Notes:
 -->
 
 <!--
@@ -149,6 +166,28 @@ Date verified: YYYY-MM-DD
 -->
 
 <!--
+## Memo tag support for transfers to omnibus accounts `memo_tag_support` — Verified by <Verifier Name>
+
+> Attach a memo tag to a transfer, recorded under the
+> splice.lfdecentralizedtrust.org/reason metadata.
+>
+> Suggested test: Include a memo tag in an asset transfer (this can be
+> combined with the cc_support test). Record the transaction update ID showing
+> the memo tag under the splice.lfdecentralizedtrust.org/reason metadata in
+> the transaction JSON.
+
+Verifier: <Verifier name or org>
+Contact: <email or Slack handle>
+Date verified: YYYY-MM-DD
+
+- Transaction update ID(s):
+- Party ID(s):
+- Explorer link(s):
+- Screenshot(s) / video: ![description](./your-wallet-name-third-party-attestation-images/memo_tag_support-verifier-name-description.png)
+- Notes:
+-->
+
+<!--
 ## CIP-0103 dApp API support `cip_0103_dapp_api` — Verified by <Verifier Name>
 
 > Connect to and sign transactions from a third-party dApp via CIP-0103.
@@ -188,28 +227,6 @@ Date verified: YYYY-MM-DD
 - Party ID(s):
 - Explorer link(s):
 - Screenshot(s) / video: ![description](./your-wallet-name-third-party-attestation-images/walletconnect_support-verifier-name-description.png)
-- Notes:
--->
-
-<!--
-## Memo tag support for transfers to exchanges `memo_tag_support` — Verified by <Verifier Name>
-
-> Attach a memo tag to a transfer, recorded under the
-> splice.lfdecentralizedtrust.org/reason metadata.
->
-> Suggested test: Include a memo tag in an asset transfer (this can be
-> combined with the cc_support test). Record the transaction update ID showing
-> the memo tag under the splice.lfdecentralizedtrust.org/reason metadata in
-> the transaction JSON.
-
-Verifier: <Verifier name or org>
-Contact: <email or Slack handle>
-Date verified: YYYY-MM-DD
-
-- Transaction update ID(s):
-- Party ID(s):
-- Explorer link(s):
-- Screenshot(s) / video: ![description](./your-wallet-name-third-party-attestation-images/memo_tag_support-verifier-name-description.png)
 - Notes:
 -->
 

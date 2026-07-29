@@ -36,12 +36,22 @@ features:
 
   # --- Primary Canton Network Features > Canton Coin ---
   - id: cc_support
-    name: "CC support (transfers and holding)"
+    name: "CC support"
     category: "Canton Coin"
     type: boolean
     suggested_test: >
-      Send CC to and from the wallet. Record the transaction update IDs and 
+      Send CC to and from the wallet. Record the transaction update IDs and
       optionally provide screenshots of the holding, transfer, and party ID.
+
+  - id: two_step_cc_transfers
+    name: "Two-step CC transfers"
+    category: "Canton Coin"
+    type: boolean
+    suggested_test: >
+      Perform a two-step CC transfer (propose/create followed by a separate
+      accept/settle step, rather than a single atomic send). Record the
+      transaction update ID(s) for both steps and optionally provide
+      screenshots of each.
 
   - id: preapprovals
     name: "Pre-approvals for CC"
@@ -81,10 +91,20 @@ features:
       update ID and optionally provide screenshots of the holding and transfer, noting
       the CIP-112 version in the token metadata.
 
-  # --- Primary Canton Network Features > Interoperability
+  - id: memo_tag_support
+    name: "Memo tag support for transfers to omnibus accounts"
+    category: "Token Standard"
+    type: boolean
+    suggested_test: >
+      Include a memo tag in an asset transfer (this can be combined with
+      the cc_support test). Record the transaction update ID showing the
+      memo tag under the splice.lfdecentralizedtrust.org/reason metadata in
+      the transaction JSON.
+
+  # --- Primary Canton Network Features > dApp Connectivity (CIP-103) ---
   - id: cip_0103_dapp_api
     name: "CIP-0103 dApp API support"
-    category: "Interoperability"
+    category: "dApp Connectivity (CIP-103)"
     type: boolean
     suggested_test: >
       Connect to a dApp using a CIP-0103 connection. Initiate a transaction
@@ -94,22 +114,12 @@ features:
 
   - id: walletconnect_support
     name: "Wallet Connect support"
-    category: "Interoperability"
+    category: "dApp Connectivity (CIP-103)"
     type: boolean
     suggested_test: >
       Connect to a dApp using Wallet Connect. Initiate a transaction from
       within the dApp and sign it from the wallet. Confirm the successful
       transaction. Optionally provide screenshots or a video recording.
-
-  - id: memo_tag_support
-    name: "Memo tag support for transfers to exchanges"
-    category: "Interoperability"
-    type: boolean
-    suggested_test: >
-      Include a memo tag in an asset transfer (this can be combined with
-      the cc_support test). Record the transaction update ID showing the
-      memo tag under the splice.lfdecentralizedtrust.org/reason metadata in
-      the transaction JSON.
 
   # --- Other Features > App Specific ---
   # NOTE: this used to share the "preapprovals" id with the Canton Coin
@@ -167,15 +177,38 @@ features:
     category: "Party Specific"
     type: boolean
 
-  # --- Other Features > Network relevant features ---
+  # --- Other Features > Network Relevant Features ---
   - id: utxo_merge_delegation
     name: "UTXO merge delegation contract enabled"
-    category: "Network relevant features"
+    category: "Network Relevant Features"
     type: boolean
     suggested_test: >
       Enable the merge delegation contract in the wallet. Witness a UTXO
       consolidation contract on-chain for CC (sender & receiver are the
       same party).
+
+  # --- Other Features > Validator Hosting ---
+  # NOTE: this used to be a single "Validator hosting (self-hosted / BYOV)"
+  # boolean under the "validator_hosting" id. Split into three so wallets
+  # can indicate which specific hosting model(s) they support, rather than
+  # a single yes/no.
+  - id: validator_hosting_byov
+    name: "Bring-Your-Own-Validator (BYOV)"
+    category: "Validator Hosting"
+    type: boolean
+    self_attested_only: true
+
+  - id: validator_hosting_private
+    name: "Private validator"
+    category: "Validator Hosting"
+    type: boolean
+    self_attested_only: true
+
+  - id: validator_hosting_shared
+    name: "Shared validator"
+    category: "Validator Hosting"
+    type: boolean
+    self_attested_only: true
 
   # --- Other Features > Transaction Signing ---
   - id: policy_workflows
@@ -198,12 +231,6 @@ features:
   # --- Other Features > Wallet Capabilities ---
   - id: compliance
     name: "Compliance"
-    category: "Wallet Capabilities"
-    type: boolean
-    self_attested_only: true
-
-  - id: validator_hosting
-    name: "Validator hosting (self-hosted / BYOV)"
     category: "Wallet Capabilities"
     type: boolean
     self_attested_only: true

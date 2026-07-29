@@ -35,17 +35,17 @@ features:
     supported: true
     proof: null
     verified_by: []
+  memo_tag_support:
+    supported: true
+    proof: null
+    verified_by: []
 
-  # Interoperability
+  # dApp Connectivity (CIP-103)
   cip_0103_dapp_api:
     supported: true
     proof: null
     verified_by: []
   walletconnect_support:
-    supported: true
-    proof: null
-    verified_by: []
-  memo_tag_support:
     supported: true
     proof: null
     verified_by: []

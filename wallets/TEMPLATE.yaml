@@ -25,7 +25,7 @@ added: null                     # YYYY-MM-DD
 #                not supported".
 #   proof:       link to your evidence heading in
 #                proofs/your-wallet-name/your-wallet-name-self-attestation.md,
-#                e.g. proofs/your-wallet-name/your-wallet-name-self-attestation.md#cc-support-transfers-and-holding-cc_support
+#                e.g. proofs/your-wallet-name/your-wallet-name-self-attestation.md#cc-support-cc_support
 #                Leave null if you haven't put together evidence yet.
 #   verified_by: list of independent verifications. Leave as [] until a
 #                third party verifies this claim (see CONTRIBUTING.md ->
@@ -60,6 +60,16 @@ features:
   # update IDs and optionally provide screenshots of the holding, transfer,
   # and party ID.
   cc_support:
+    supported: false
+    # reason: "<short explanation>"
+    proof: null
+    verified_by: []
+
+  # Two-step CC transfer (propose/create followed by a separate
+  # accept/settle step, rather than a single atomic send).
+  # Suggested test: Perform a two-step CC transfer. Record the transaction
+  # update ID(s) for both steps and optionally provide screenshots of each.
+  two_step_cc_transfers:
     supported: false
     # reason: "<short explanation>"
     proof: null
@@ -110,7 +120,19 @@ features:
   #   proof: null
   #   verified_by: []
 
-  # Interoperability
+  # Attach a memo tag to a transfer, recorded under the
+  # splice.lfdecentralizedtrust.org/reason metadata.
+  # Suggested test: Include a memo tag in an asset transfer (this can be
+  # combined with the cc_support test). Record the transaction update ID
+  # showing the memo tag under the splice.lfdecentralizedtrust.org/reason
+  # metadata in the transaction JSON.
+  memo_tag_support:
+    supported: false
+    # reason: "<short explanation>"
+    proof: null
+    verified_by: []
+
+  # dApp Connectivity (CIP-103)
   # Connect to and sign transactions from a third-party dApp via CIP-0103.
   # Suggested test: Connect to a dApp using a CIP-0103 connection. Initiate
   # a transaction from within the dApp and sign it from the wallet. Confirm
@@ -129,18 +151,6 @@ features:
   # the successful transaction. Optionally provide screenshots or a video
   # recording.
   walletconnect_support:
-    supported: false
-    # reason: "<short explanation>"
-    proof: null
-    verified_by: []
-
-  # Attach a memo tag to a transfer, recorded under the
-  # splice.lfdecentralizedtrust.org/reason metadata.
-  # Suggested test: Include a memo tag in an asset transfer (this can be
-  # combined with the cc_support test). Record the transaction update ID
-  # showing the memo tag under the splice.lfdecentralizedtrust.org/reason
-  # metadata in the transaction JSON.
-  memo_tag_support:
     supported: false
     # reason: "<short explanation>"
     proof: null
@@ -203,7 +213,7 @@ features:
   #   verified_by: []
 
   
-  # Network relevant features
+  # Network Relevant Features
 
   ## The wallet enables the merge delegation contract so UTXOs can be
   ## consolidated on-chain, reducing UTXO bloat.
@@ -215,6 +225,21 @@ features:
   #   # reason: "<short explanation>"
   #   proof: null
   #   verified_by: []
+
+  # Validator Hosting
+  ## Which validator hosting model(s) the wallet supports. Not Canton
+  ## Network specific -- no proof needed.
+  # validator_hosting_byov:
+  #   supported: true
+  #   # reason: "<short explanation>"
+
+  # validator_hosting_private:
+  #   supported: true
+  #   # reason: "<short explanation>"
+
+  # validator_hosting_shared:
+  #   supported: true
+  #   # reason: "<short explanation>"
 
   # Transaction Signing
   ## Configurable approval policies before a transaction is signed. Not
@@ -242,12 +267,6 @@ features:
   ## Compliance capabilities/certifications the wallet supports. Not Canton
   ## Network specific -- no proof needed.
   # compliance:
-  #   supported: true
-  #   # reason: "<short explanation>"
-
-  ## Validator hosting, self-hosted or bring-your-own-validator (BYOV). Not
-  ## Canton Network specific -- no proof needed.
-  # validator_hosting:
   #   supported: true
   #   # reason: "<short explanation>"
 

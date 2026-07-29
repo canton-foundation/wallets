@@ -9,7 +9,7 @@ record. -->
 
 ---
 
-## CC support (transfers and holding) `cc_support` — Verified by Third Party
+## CC support `cc_support` — Verified by Third Party
 
 > Send, receive, and hold Canton Coin.
 >

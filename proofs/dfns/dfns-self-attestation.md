@@ -5,7 +5,7 @@ Last updated: 2026-07-24
 
 ---
 
-## CC support (transfers and holding) `cc_support`
+## CC support `cc_support`
 
 > Send, receive, and hold Canton Coin.
 
@@ -45,7 +45,7 @@ Last updated: 2026-07-24
   [Use WalletConnect — Dfns docs](https://docs.dfns.co/guides/walletconnect),
   [Institutional Certified by WalletConnect](https://www.dfns.co/article/institutional-certified-by-walletconnect).
 
-## Memo tag support for transfers to exchanges `memo_tag_support`
+## Memo tag support for transfers to omnibus accounts `memo_tag_support`
 
 > Attach a memo tag to a transfer, recorded under the
 > splice.lfdecentralizedtrust.org/reason metadata.
