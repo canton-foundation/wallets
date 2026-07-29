@@ -1,0 +1,69 @@
+name: "Send"
+wallet-name: send
+website: "https://cantonwallet.com"
+contact: "peter@send.it"
+added: "2026-07-24"
+slack_party_scaling_channel_joined: true
+
+features:
+  # Wallet Type
+  wallet_model: [retail]
+  custody_model: self-custodial
+  form_factor: [browser, mobile, browser-extension]
+  deployment_model: [saas]
+
+  # Canton Coin
+  cc_support:
+    supported: true
+    proof: null
+    verified_by: []
+  preapprovals:
+    supported: true
+    proof: null
+    verified_by: []
+
+  # Token Standard
+  cip_0056_transfer:
+    supported: true
+    proof: null
+    verified_by: []
+  cip_0056_allocation:
+    supported: true
+    proof: null
+    verified_by: []
+  cip_112_v2:
+    supported: true
+    proof: null
+    verified_by: []
+
+  # Interoperability
+  cip_0103_dapp_api:
+    supported: true
+    proof: null
+    verified_by: []
+  walletconnect_support:
+    supported: true
+    proof: null
+    verified_by: []
+  memo_tag_support:
+    supported: true
+    proof: null
+    verified_by: []
+
+  # Party Specific
+  key_recovery:
+    supported: true
+
+  # Transaction Signing
+  hardware_wallet_support:
+    supported: true
+    proof: null
+    verified_by: []
+
+  # Wallet Capabilities
+  integrated_swaps:
+    supported: true
+    proof: null
+    verified_by: []
+  assets_supported: ["CC", "CIP-0056 tokens"]
+  languages_supported: ["English"]

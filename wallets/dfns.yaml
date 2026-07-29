@@ -1,0 +1,79 @@
+name: "Dfns"
+wallet-name: dfns
+website: "https://www.dfns.co"
+contact: "contact@dfns.co"
+added: "2026-07-24"
+slack_party_scaling_channel_joined: true
+
+features:
+  # Wallet Type
+  wallet_model: [enterprise]
+  custody_model: self-custodial
+  form_factor: [browser]
+  deployment_model: [self-hosted, saas, hybrid]
+
+  # Canton Coin
+  cc_support:
+    supported: true
+    proof: proofs/dfns/dfns-self-attestation.md#cc-support-transfers-and-holding-cc_support
+    verified_by: []
+  preapprovals:
+    supported: true
+    proof: proofs/dfns/dfns-self-attestation.md#pre-approvals-for-cc-preapprovals
+    verified_by: []
+
+  # Token Standard
+  cip_0056_transfer:
+    supported: true
+    proof: proofs/dfns/dfns-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    verified_by: []
+
+  # Interoperability
+  walletconnect_support:
+    supported: true
+    proof: proofs/dfns/dfns-self-attestation.md#wallet-connect-support-walletconnect_support
+    verified_by: []
+  memo_tag_support:
+    supported: true
+    proof: proofs/dfns/dfns-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support
+    verified_by: []
+
+  # App Specific
+  registry_preapprovals:
+    supported: false
+    reason: "Not supported yet"
+    proof: null
+    verified_by: []
+  wallet_gateway_signing_driver:
+    supported: true
+    proof: proofs/dfns/dfns-self-attestation.md#wallet-gateway-signing-driver-wallet_gateway_signing_driver
+    verified_by: []
+
+  # Party Specific
+  key_generation_method: "MPC/TSS -- keys generated as distributed shares across Dfns's signing network -- or HSM-based key generation; no seed phrases"
+  key_recovery:
+    supported: true
+  multi_address:
+    supported: true
+
+  # Transaction Signing
+  policy_workflows:
+    supported: true
+  threshold_signature_scheme:
+    supported: true
+  hardware_wallet_support:
+    supported: true
+    proof: proofs/dfns/dfns-self-attestation.md#hardware-wallet-support-hardware_wallet_support
+    verified_by: []
+
+  # Wallet Capabilities
+  compliance:
+    supported: true
+  validator_hosting:
+    supported: true
+  clear_signing:
+    supported: true
+    proof: proofs/dfns/dfns-self-attestation.md#clear-signing-clear_signing
+    verified_by: []
+  assets_supported: ["CC", "Other CIP-0056 tokens on demand (token issuer provides an RPC node)"]
+  languages_supported: ["English"]

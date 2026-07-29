@@ -1,8 +1,4 @@
-# DUMMY SUBMISSION -- created to demonstrate WALLET_DIRECTORY.md rendering.
-# Not a real wallet provider. Safe to delete once you've seen the table
-# populate, or leave it in place as a live reference for future
-# contributors (mirrors examples/acme-wallet.yaml with a real wallets/
-# entry + matching proofs/ folder).
+# Dummy wallet example
 
 name: "Dummy Wallet"
 wallet-name: dummy-wallet
@@ -21,21 +17,21 @@ features:
   # Canton Coin
   cc_support:
     supported: true
-    proof: proofs/dummy-wallet/dummy-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support
+    proof: examples/dummy-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support
     verified_by:
       - by: ThirdParty
         date: "2026-06-05"
         result: verified
-        proof: proofs/dummy-wallet/dummy-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-thirdparty
+        proof: examples/dummy-wallet-third-party-attestation.md#cc-support-transfers-and-holding-cc_support-verified-by-thirdparty
   preapprovals:
     supported: true
-    proof: proofs/dummy-wallet/dummy-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals
+    proof: examples/dummy-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals
     verified_by: []
 
   # Token Standard
   cip_0056_transfer:
     supported: true
-    proof: proofs/dummy-wallet/dummy-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    proof: examples/dummy-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
     verified_by: []
   cip_112_v2:
     supported: true
@@ -45,7 +41,7 @@ features:
   # Interoperability
   cip_0103_dapp_api:
     supported: true
-    proof: proofs/dummy-wallet/dummy-wallet-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
+    proof: examples/dummy-wallet-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
     verified_by: []
   walletconnect_support:
     supported: false
@@ -54,7 +50,7 @@ features:
     verified_by: []
   memo_tag_support:
     supported: true
-    proof: proofs/dummy-wallet/dummy-wallet-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support
+    proof: examples/dummy-wallet-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support
     verified_by: []
 
   # Network relevant features
