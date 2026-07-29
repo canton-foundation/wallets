@@ -9,10 +9,16 @@
 Source of truth for Canton Network wallet providers' supported features and
 assets, per the Wallet Directory Program (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
 
-**Legend:** ✅ self-attested -- click through to the evidence · 🛡️ *name* verified by an
-independent third party -- click the name for their evidence · ❌ *name* found this claim to
-be unsupported, contradicting the wallet -- click the name for their evidence · a linked
-"Not supported" means the wallet has said no with a reason ·
+**Legend**
+
+✅ self-attested -- click through to the evidence
+
+🛡️ *name* verified by an independent third party -- click the name for their evidence
+
+❌ *name* found this claim to be unsupported, contradicting the wallet -- click the name for their evidence
+
+A linked "Not supported" means the wallet has said no with a reason
+
 — no claim made either way.
 
 ## Wallet Overview & Primary Canton Network Features
