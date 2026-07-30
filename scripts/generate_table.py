@@ -222,7 +222,9 @@ def load_wallets(wallets_dir):
             continue
         data["_source_file"] = os.path.relpath(path)
         wallets.append(data)
-    return sorted(wallets, key=lambda w: w.get("name", "").lower())
+    # Ordered by date added (earliest first, left to right); wallets missing
+    # `added` sort to the end. Same-day ties break alphabetically by name.
+    return sorted(wallets, key=lambda w: (w.get("added") or "9999-99-99", w.get("name", "").lower()))
 
 
 def wallet_file_link(wallet):
