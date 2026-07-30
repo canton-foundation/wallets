@@ -1,0 +1,86 @@
+name: "Askardex Wallet"
+wallet-name: askardex-wallet
+website: "https://wallet.askardex.com"
+contact: "irpan@askardex.com"
+added: "2026-07-25"
+slack_party_scaling_channel_joined: true
+
+features:
+  # Wallet Type
+  wallet_model:
+    - Retail
+
+  custody_model: "Self-custodial"
+
+  form_factor:
+    - mobile
+
+  deployment_model:
+    - saas
+
+  # Canton Coin
+  cc_support:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support
+    verified_by: []
+
+  preapprovals:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals
+    verified_by: []
+
+  # Token Standard
+  cip_0056_transfer:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    verified_by: []
+
+  # Interoperability
+  cip_0103_dapp_api:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
+    verified_by: []
+
+  walletconnect_support:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#wallet-connect-support-walletconnect_support
+    verified_by: []
+
+  memo_tag_support:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support
+    verified_by: []
+
+  # Party Specific
+  key_generation_method: "Seed phrase (BIP-39 mnemonic, 24 words)"
+
+  key_recovery:
+    supported: true
+
+  # Wallet Capabilities
+  validator_hosting:
+    supported: true
+
+  reward_minting:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#reward-minting-reward_minting
+    verified_by: []
+
+  clear_signing:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#clear-signing-clear_signing
+    verified_by: []
+
+  integrated_swaps:
+    supported: false
+    reason: "In-wallet swap (DEX) is implemented and available in production but currently behind a coming-soon gate pending liquidity bootstrap."
+
+  assets_supported:
+    - "CC"
+    - "USDCx (CIP-0056)"
+    - "CBTC (CIP-0056)"
+    - "CETH (CIP-0056)"
+    - "HANDL (CIP-0056)"
+
+  languages_supported:
+    - "English"
