@@ -15,7 +15,7 @@ features:
   # Canton Coin
   cc_support:
     supported: true
-    proof: proofs/walley/walley-self-attestation.md#cc-support-transfers-and-holding-cc_support
+    proof: proofs/walley/walley-self-attestation.md#cc-support-cc_support
     verified_by: []
   preapprovals:
     supported: true
@@ -37,7 +37,12 @@ features:
     proof: null
     verified_by: []
 
-  # Interoperability
+  memo_tag_support:
+    supported: true
+    proof: proofs/walley/walley-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support
+    verified_by: []
+
+  # dApp Connectivity (CIP-103)
   cip_0103_dapp_api:
     supported: true
     proof: proofs/walley/walley-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
@@ -46,10 +51,6 @@ features:
     supported: false
     reason: "dApps connect to Walley through the CIP-0103 provider adapter. WalletConnect is used only to attach an external Ethereum wallet for USDCx bridging, never for dApp sessions with Walley."
     proof: null
-    verified_by: []
-  memo_tag_support:
-    supported: true
-    proof: proofs/walley/walley-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support
     verified_by: []
 
   # App Specific
@@ -98,10 +99,22 @@ features:
     proof: null
     verified_by: []
 
-  # Wallet Capabilities
-  validator_hosting:
+  # Validator Hosting
+  validator_hosting_byov:
     supported: false
-    reason: "Walley hosts every user party on its own validator. Bring-your-own-validator is not offered."
+    reason: "Bring-your-own-validator is not offered. Walley hosts every user party on its own validator."
+  # TODO: "validator_hosting" was split into validator_hosting_byov,
+  # validator_hosting_private, and validator_hosting_shared. Walley's prior
+  # answer confirms BYOV is not offered (carried forward above), but doesn't
+  # say whether "hosts every user party on its own validator" means a
+  # dedicated (private) validator per user or one Walley-run validator
+  # shared across users -- needs a follow-up from Walley to fill these in.
+  # validator_hosting_private:
+  #   supported: true
+  # validator_hosting_shared:
+  #   supported: true
+
+  # Wallet Capabilities
   reward_minting:
     supported: false
     reason: "Walley does not claim or mint validator or app rewards on behalf of users."

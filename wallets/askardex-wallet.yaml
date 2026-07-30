@@ -21,7 +21,7 @@ features:
   # Canton Coin
   cc_support:
     supported: true
-    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#cc-support-cc_support
     verified_by: []
 
   preapprovals:
@@ -35,7 +35,12 @@ features:
     proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
     verified_by: []
 
-  # Interoperability
+  memo_tag_support:
+    supported: true
+    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support
+    verified_by: []
+
+  # dApp Connectivity (CIP-103)
   cip_0103_dapp_api:
     supported: true
     proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
@@ -46,21 +51,25 @@ features:
     proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#wallet-connect-support-walletconnect_support
     verified_by: []
 
-  memo_tag_support:
-    supported: true
-    proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support
-    verified_by: []
-
   # Party Specific
   key_generation_method: "Seed phrase (BIP-39 mnemonic, 24 words)"
 
   key_recovery:
     supported: true
 
-  # Wallet Capabilities
-  validator_hosting:
-    supported: true
+  # Validator Hosting
+  # TODO: "validator_hosting" was split into validator_hosting_byov,
+  # validator_hosting_private, and validator_hosting_shared. Askardex's
+  # prior answer (supported: true) doesn't say which model(s) apply --
+  # needs a follow-up from Askardex to fill these in correctly.
+  # validator_hosting_byov:
+  #   supported: true
+  # validator_hosting_private:
+  #   supported: true
+  # validator_hosting_shared:
+  #   supported: true
 
+  # Wallet Capabilities
   reward_minting:
     supported: true
     proof: proofs/askardex-wallet/askardex-wallet-self-attestation.md#reward-minting-reward_minting

@@ -19,7 +19,7 @@ request.
 
 ---
 
-## CC support (transfers and holding) `cc_support`
+## CC support `cc_support`
 
 > Send, receive, and hold Canton Coin.
 >
@@ -133,7 +133,7 @@ request.
   connecting and revoking sessions at
   <https://docs.walley.cc/guides/dapp-connections>.
 
-## Memo tag support for transfers to exchanges `memo_tag_support`
+## Memo tag support for transfers to omnibus accounts `memo_tag_support`
 
 > Attach a memo tag to a transfer, recorded under the
 > splice.lfdecentralizedtrust.org/reason metadata.

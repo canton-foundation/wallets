@@ -34,14 +34,14 @@ A linked "Not supported" means the wallet has said no with a reason
 | &nbsp;&nbsp;&nbsp;&nbsp;Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware) | browser | browser, mobile, browser-extension | mobile | browser |
 | &nbsp;&nbsp;&nbsp;&nbsp;Deployment Model (Self-hosted / SaaS / Hybrid) | self-hosted, saas, hybrid | saas | saas | saas |
 | **Canton Coin** |  |  |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;CC support | [✅](proofs/dfns/dfns-self-attestation.md#cc-support-cc_support) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#cc-support-transfers-and-holding-cc_support) | [✅](proofs/walley/walley-self-attestation.md#cc-support-transfers-and-holding-cc_support) |
+| &nbsp;&nbsp;&nbsp;&nbsp;CC support | [✅](proofs/dfns/dfns-self-attestation.md#cc-support-cc_support) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#cc-support-cc_support) | [✅](proofs/walley/walley-self-attestation.md#cc-support-cc_support) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Two-step CC transfers | — | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Pre-approvals for CC | [✅](proofs/dfns/dfns-self-attestation.md#pre-approvals-for-cc-preapprovals) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals) | [✅](proofs/walley/walley-self-attestation.md#pre-approvals-for-cc-preapprovals) |
 | **Token Standard** |  |  |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-0056 token standard transfer support | [✅](proofs/dfns/dfns-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer) | [✅](proofs/walley/walley-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer) |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-0056 token standard allocation support | — | ✅ | — | [✅](proofs/walley/walley-self-attestation.md#cip-0056-token-standard-allocation-support-cip_0056_allocation) |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-112 token standard v2 support | — | ✅ | — | [Not supported](wallets/walley.yaml) |
-| &nbsp;&nbsp;&nbsp;&nbsp;Memo tag support for transfers to omnibus accounts | [✅](proofs/dfns/dfns-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support) | [✅](proofs/walley/walley-self-attestation.md#memo-tag-support-for-transfers-to-exchanges-memo_tag_support) |
+| &nbsp;&nbsp;&nbsp;&nbsp;Memo tag support for transfers to omnibus accounts | [✅](proofs/dfns/dfns-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support) | [✅](proofs/walley/walley-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support) |
 | **dApp Connectivity (CIP-103)** |  |  |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;CIP-0103 dApp API support | — | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api) | [✅](proofs/walley/walley-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Wallet Connect support | [✅](proofs/dfns/dfns-self-attestation.md#wallet-connect-support-walletconnect_support) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#wallet-connect-support-walletconnect_support) | [Not supported](wallets/walley.yaml) |
@@ -62,7 +62,7 @@ A linked "Not supported" means the wallet has said no with a reason
 | **Network Relevant Features** |  |  |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;UTXO merge delegation contract enabled | — | — | — | [✅](proofs/walley/walley-self-attestation.md#utxo-merge-delegation-contract-enabled-utxo_merge_delegation) |
 | **Validator Hosting** |  |  |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Bring-Your-Own-Validator (BYOV) | ✅ | — | — | — |
+| &nbsp;&nbsp;&nbsp;&nbsp;Bring-Your-Own-Validator (BYOV) | ✅ | — | — | [Not supported](wallets/walley.yaml) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Private validator | — | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Shared validator | — | — | — | — |
 | **Transaction Signing** |  |  |  |  |

@@ -7,7 +7,7 @@ All tests performed on Canton Network MainNet (Splice 0.6.x, Migration ID 4).
 
 ---
 
-## CC support (transfers and holding) `cc_support`
+## CC support `cc_support`
 
 > Send, receive, and hold Canton Coin.
 >
@@ -102,7 +102,7 @@ Four CIP-0056 tokens tested on mainnet:
 
 ---
 
-## Memo tag support for transfers to exchanges `memo_tag_support`
+## Memo tag support for transfers to omnibus accounts `memo_tag_support`
 
 > Attach a memo tag to a transfer, recorded under the
 > splice.lfdecentralizedtrust.org/reason metadata.
