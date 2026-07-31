@@ -29,10 +29,10 @@ A linked "Not supported" means the wallet has said no with a reason
 | &nbsp;&nbsp;&nbsp;&nbsp;Website | [https://www.dfns.co](https://www.dfns.co) | [https://cantonwallet.com](https://cantonwallet.com) | [https://wallet.askardex.com](https://wallet.askardex.com) | [https://walley.cc](https://walley.cc) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Added | 2026-07-24 | 2026-07-24 | 2026-07-25 | 2026-07-27 |
 | **Wallet Type** |  |  |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Retail / Enterprise | enterprise | retail | Retail | retail |
-| &nbsp;&nbsp;&nbsp;&nbsp;Custody Type | self-custodial | self-custodial | Self-custodial | self-custodial |
-| &nbsp;&nbsp;&nbsp;&nbsp;Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware) | browser | browser, mobile,<br>browser-extension | mobile | browser |
-| &nbsp;&nbsp;&nbsp;&nbsp;Deployment Model (Self-hosted / SaaS / Hybrid) | self-hosted, saas, hybrid | saas | saas | saas |
+| &nbsp;&nbsp;&nbsp;&nbsp;Retail / Enterprise | Enterprise | Retail | Retail | Retail |
+| &nbsp;&nbsp;&nbsp;&nbsp;Custody Type | Self-custodial | Self-custodial | Self-custodial | Self-custodial |
+| &nbsp;&nbsp;&nbsp;&nbsp;Form factor (Mobile / Browser / Desktop<br>/ Browser Extension / Hardware) | Browser | Browser, Mobile,<br>Browser-extension | Mobile | Browser |
+| &nbsp;&nbsp;&nbsp;&nbsp;Deployment Model (Self-hosted / SaaS /<br>Hybrid) | Self-hosted, SaaS, Hybrid | SaaS | SaaS | SaaS |
 | **Canton Coin** |  |  |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;CC support | [✅](proofs/dfns/dfns-self-attestation.md#cc-support-cc_support) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#cc-support-cc_support) | [✅](proofs/walley/walley-self-attestation.md#cc-support-cc_support) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Two-step CC transfers | — | — | — | — |

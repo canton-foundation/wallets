@@ -11,6 +11,13 @@
 #                  test against the network. Wallets just set
 #                  supported: true/false (plus reason if false); omit
 #                  proof and verified_by entirely for these ids.
+#
+# A `name` may contain a manual "<br>" line break to keep the Feature
+# column in WALLET_DIRECTORY.md from forcing a wide column -- only ever
+# add one to a freetext feature or a boolean with no proof heading. Never
+# add one to a feature that has a matching proof-file heading (see
+# CONTRIBUTING.md -- headings must match `name` exactly, and a literal
+# "<br>" would break both the heading and its GitHub anchor).
 
 features:
   # --- Wallet Type ---
@@ -25,12 +32,12 @@ features:
     type: freetext
 
   - id: form_factor
-    name: "Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware)"
+    name: "Form factor (Mobile / Browser / Desktop<br>/ Browser Extension / Hardware)"
     category: "Wallet Type"
     type: freetext
 
   - id: deployment_model
-    name: "Deployment Model (Self-hosted / SaaS / Hybrid)"
+    name: "Deployment Model (Self-hosted / SaaS /<br>Hybrid)"
     category: "Wallet Type"
     type: freetext
 

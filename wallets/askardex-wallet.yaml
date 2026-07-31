@@ -13,10 +13,10 @@ features:
   custody_model: "Self-custodial"
 
   form_factor:
-    - mobile
+    - Mobile
 
   deployment_model:
-    - saas
+    - SaaS
 
   # Canton Coin
   cc_support:

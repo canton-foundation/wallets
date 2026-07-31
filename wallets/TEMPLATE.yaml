@@ -50,9 +50,9 @@ features:
   # Who holds the private keys (custodial and/or self-custodial).
   custody_model: null        # Custodial and / or Self-custodial
   # Mobile, browser, desktop, browser extension, hardware.
-  form_factor: []            # any of: mobile, browser, desktop, browser-extension, hardware
+  form_factor: []            # any of: Mobile, Browser, Desktop, Browser-extension, Hardware
   # Self-hosted, SaaS, hybrid, or on-prem.
-  deployment_model: []       # any of: self-hosted, saas, hybrid, on-prem
+  deployment_model: []       # any of: Self-hosted, SaaS, Hybrid, On-prem
 
   # Canton Coin
   # Send, receive, and hold Canton Coin.

@@ -7,10 +7,10 @@ slack_party_scaling_channel_joined: true
 
 features:
   # Wallet Type
-  wallet_model: [enterprise]
-  custody_model: self-custodial
-  form_factor: [browser]
-  deployment_model: [self-hosted, saas, hybrid]
+  wallet_model: [Enterprise]
+  custody_model: Self-custodial
+  form_factor: [Browser]
+  deployment_model: [Self-hosted, SaaS, Hybrid]
 
   # Canton Coin
   cc_support:
