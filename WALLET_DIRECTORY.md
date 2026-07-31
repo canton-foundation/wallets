@@ -31,7 +31,7 @@ A linked "Not supported" means the wallet has said no with a reason
 | **Wallet Type** |  |  |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;Retail / Enterprise | enterprise | retail | Retail | retail |
 | &nbsp;&nbsp;&nbsp;&nbsp;Custody Type | self-custodial | self-custodial | Self-custodial | self-custodial |
-| &nbsp;&nbsp;&nbsp;&nbsp;Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware) | browser | browser, mobile, browser-extension | mobile | browser |
+| &nbsp;&nbsp;&nbsp;&nbsp;Form factor (Mobile / Browser / Desktop / Browser Extension / Hardware) | browser | browser, mobile,<br>browser-extension | mobile | browser |
 | &nbsp;&nbsp;&nbsp;&nbsp;Deployment Model (Self-hosted / SaaS / Hybrid) | self-hosted, saas, hybrid | saas | saas | saas |
 | **Canton Coin** |  |  |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;CC support | [✅](proofs/dfns/dfns-self-attestation.md#cc-support-cc_support) | ✅ | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#cc-support-cc_support) | [✅](proofs/walley/walley-self-attestation.md#cc-support-cc_support) |
@@ -54,7 +54,7 @@ A linked "Not supported" means the wallet has said no with a reason
 | &nbsp;&nbsp;&nbsp;&nbsp;Pre-approvals for DA Registry issued assets | [Not supported](wallets/dfns.yaml) | — | — | [✅](proofs/walley/walley-self-attestation.md#pre-approvals-for-da-registry-issued-assets-registry_preapprovals) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Wallet Gateway signing driver | [✅](proofs/dfns/dfns-self-attestation.md#wallet-gateway-signing-driver-wallet_gateway_signing_driver) | — | — | [Not supported](wallets/walley.yaml) |
 | **Party Specific** |  |  |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Key generation method | MPC/TSS -- keys generated as distributed shares across Dfns's signing network -- or HSM-based key generation; no seed phrases | — | Seed phrase (BIP-39 mnemonic, 24 words) | WebAuthn passkey PRF secret, expanded with HKDF-SHA512 into an Ed25519 signing key that is generated and held in the browser. A 24-word BIP-39 phrase backs up the same secret. |
+| &nbsp;&nbsp;&nbsp;&nbsp;Key generation method | MPC/TSS -- keys generated as<br>distributed shares across<br>Dfns's signing network -- or<br>HSM-based key generation; no<br>seed phrases | — | Seed phrase (BIP-39 mnemonic,<br>24 words) | WebAuthn passkey PRF secret,<br>expanded with HKDF-SHA512 into<br>an Ed25519 signing key that is<br>generated and held in the<br>browser. A 24-word BIP-39<br>phrase backs up the same<br>secret. |
 | &nbsp;&nbsp;&nbsp;&nbsp;Key recovery | ✅ | ✅ | ✅ | ✅ |
 | &nbsp;&nbsp;&nbsp;&nbsp;Social recovery | — | — | — | [Not supported](wallets/walley.yaml) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Multi-address / account | ✅ | — | — | [Not supported](wallets/walley.yaml) |
@@ -76,5 +76,5 @@ A linked "Not supported" means the wallet has said no with a reason
 | &nbsp;&nbsp;&nbsp;&nbsp;Transfer object / proof of transfer support | — | — | — | [Not supported](wallets/walley.yaml) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Clear signing | [✅](proofs/dfns/dfns-self-attestation.md#clear-signing-clear_signing) | — | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#clear-signing-clear_signing) | [✅](proofs/walley/walley-self-attestation.md#clear-signing-clear_signing) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Integrated swaps | — | ✅ | [Not supported](wallets/askardex-wallet.yaml) | [✅](proofs/walley/walley-self-attestation.md#integrated-swaps-integrated_swaps) |
-| &nbsp;&nbsp;&nbsp;&nbsp;Assets supported | CC, Other CIP-0056 tokens on demand (token issuer provides an RPC node) | CC, CIP-0056 tokens | CC, USDCx (CIP-0056), CBTC (CIP-0056), CETH (CIP-0056), HANDL (CIP-0056) | CC, USDCx, CBTC, cETH, SBC, raUSD, HANDL, EDELx, USDM1, TRKX index tokens, Tradecraft LP tokens, any CIP-0056 token in the Walley registry (79 live at api.walley.cc/v1/tokens) |
+| &nbsp;&nbsp;&nbsp;&nbsp;Assets supported | CC, Other CIP-0056 tokens on<br>demand (token issuer provides<br>an RPC node) | CC, CIP-0056 tokens | CC, USDCx (CIP-0056), CBTC<br>(CIP-0056), CETH (CIP-0056),<br>HANDL (CIP-0056) | CC, USDCx, CBTC, cETH, SBC,<br>raUSD, HANDL, EDELx, USDM1,<br>TRKX index tokens, Tradecraft<br>LP tokens, any CIP-0056 token<br>in the Walley registry (79<br>live at<br>api.walley.cc/v1/tokens) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Languages supported | English | English | English | English |

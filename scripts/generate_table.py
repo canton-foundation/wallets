@@ -26,8 +26,16 @@ import argparse
 import glob
 import os
 import re
+import textwrap
 
 INDENT = "&nbsp;&nbsp;&nbsp;&nbsp;"
+
+# GitHub markdown tables have no column-width control (no CSS support in
+# rendered .md), so long free-text cells (e.g. key_generation_method,
+# assets_supported) would otherwise force that whole column wide. Wrapping
+# at a fixed character count with <br> keeps every column's width capped
+# and predictable -- the cell just gets taller instead of the column wider.
+CELL_WRAP_WIDTH = 30
 
 # Categories that make up table 1, "Wallet Overview & Primary Canton
 # Network Features" -- everything else goes in table 2, "Other Features".
@@ -276,13 +284,24 @@ def render_boolean_cell(feature_id, wallet, self_attested_only=False):
     return cell
 
 
+def wrap_cell_text(text, width=CELL_WRAP_WIDTH):
+    # break_long_words=False: a single word/URL longer than `width` is left
+    # intact on its own line rather than getting chopped mid-word.
+    lines = textwrap.wrap(text, width=width, break_long_words=False, break_on_hyphens=False)
+    return "<br>".join(lines) if lines else text
+
+
 def render_freetext_cell(feature_id, wallet):
     val = (wallet.get("features") or {}).get(feature_id)
     if val in (None, "", []):
         return "—"
     if isinstance(val, list):
-        return ", ".join(str(v) for v in val) if val else "—"
-    return str(val)
+        text = ", ".join(str(v) for v in val) if val else None
+    else:
+        text = str(val)
+    if not text:
+        return "—"
+    return wrap_cell_text(text)
 
 
 def render_feature_cell(feature, wallet):
