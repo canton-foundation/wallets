@@ -1,0 +1,27 @@
+name: "Nightly"
+wallet-name: nightly
+website: "https://nightly.app/wallet/canton"
+contact: "hello@nightly.app"
+added: "2026-08-04"
+slack_party_scaling_channel_joined: true
+features:
+  wallet_model: [Retail]
+  custody_model: Self-custodial
+  form_factor: [Mobile, Browser-extension]
+  deployment_model: [SaaS]
+  cc_support:
+    supported: true
+    proof: proofs/nightly/nightly-self-attestation.md#cc-support-cc_support
+    verified_by: []
+  two_step_cc_transfers:
+    supported: true
+    proof: proofs/nightly/nightly-self-attestation.md#two-step-cc-transfers-two_step_cc_transfers
+    verified_by: []
+  memo_tag_support:
+    supported: true
+    proof: proofs/nightly/nightly-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support
+    verified_by: []
+  cip_0103_dapp_api:
+    supported: true
+    proof: proofs/nightly/nightly-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
+    verified_by: []
