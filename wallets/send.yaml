@@ -50,7 +50,14 @@ features:
     proof: null
     verified_by: []
 
+  # App Specific
+  registry_preapprovals:
+    supported: true
+    proof: null
+    verified_by: []
+
   # Party Specific
+  key_generation_method: "Passkey-based (WebAuthn) key generation on the user's device; no seed phrases"
   key_recovery:
     supported: true
   multi_address:
@@ -59,6 +66,18 @@ features:
     supported: true
     proof: null
     verified_by: []
+
+  # Network Relevant Features
+  utxo_merge_delegation:
+    supported: true
+    proof: null
+    verified_by: []
+
+  # Validator Hosting
+  validator_hosting_private:
+    supported: true
+  validator_hosting_shared:
+    supported: true
 
   # Transaction Signing
   policy_workflows:
@@ -71,6 +90,14 @@ features:
     verified_by: []
 
   # Wallet Capabilities
+  tokenization:
+    supported: true
+    proof: null
+    verified_by: []
+  transfer_proof:
+    supported: true
+    proof: null
+    verified_by: []
   integrated_swaps:
     supported: true
     proof: null
