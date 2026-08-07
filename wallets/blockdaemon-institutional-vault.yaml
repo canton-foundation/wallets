@@ -6,7 +6,7 @@ name: "Blockdaemon Institutional Vault"
 wallet-name: blockdaemon-institutional-vault
 website: "https://www.blockdaemon.com/mpc-wallets-and-vaults/institutional-vault"
 contact: "support@blockdaemon.com"
-added: "2026-07-24"
+added: "2026-08-05"
 # Required by CONTRIBUTING.md — confirm active membership in #ext-temp-party-scaling
 # before opening the upstream PR.
 slack_party_scaling_channel_joined: true
