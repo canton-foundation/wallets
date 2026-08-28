@@ -48,6 +48,12 @@ features:
     proof: proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support
     verified_by: []
 
+  # dApp Connectivity (CIP-103)
+  walletconnect_support:
+    supported: true
+    proof: proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#wallet-connect-support-walletconnect_support
+    verified_by: []
+
   # App Specific
   wallet_gateway_signing_driver:
     supported: true
