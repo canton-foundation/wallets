@@ -2,7 +2,7 @@ name: "Ledger Wallet"
 wallet-name: ledger-wallet
 website: "https://www.ledger.com"
 contact: "livio.aitali@ledger.fr"
-added: "2026-08-10"
+added: "2026-08-17"
 slack_party_scaling_channel_joined: true
 
 features:
