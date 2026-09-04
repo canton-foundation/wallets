@@ -7,7 +7,7 @@ name: "Metatarz"
 wallet-name: metatarz
 website: "https://wallet.metatarz.xyz"
 contact: "support@metatarz.xyz"
-added: "2026-07-31"
+added: "2026-08-13"
 
 features:
   wallet_model: ["Retail", "Enterprise"]

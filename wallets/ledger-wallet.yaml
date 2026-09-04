@@ -1,0 +1,83 @@
+name: "Ledger Wallet"
+wallet-name: ledger-wallet
+website: "https://www.ledger.com"
+contact: "livio.aitali@ledger.fr"
+added: "2026-08-17"
+slack_party_scaling_channel_joined: true
+
+features:
+  # Wallet Type
+  wallet_model: [Retail]
+  custody_model: Self-custodial
+  form_factor: [Hardware, Desktop, Mobile]
+  deployment_model: [Hybrid]
+
+  key_generation_method: "BIP-39 seed phrase; SLIP-10 Ed25519 keys derived and held on the Ledger hardware device"
+  assets_supported: ["Canton Coin (CC)", "CIP-0056 token instruments"]
+  languages_supported: ["English", "French", "Spanish", "German", "Japanese", "Korean", "Portuguese (Brazil)", "Russian", "Turkish", "Chinese (Simplified)", "Thai"]
+
+  # Canton Coin
+  cc_support:
+    supported: true
+    proof: proofs/ledger-wallet/ledger-wallet-self-attestation.md#cc-support-cc_support
+    verified_by: []
+
+  two_step_cc_transfers:
+    supported: true
+    proof: proofs/ledger-wallet/ledger-wallet-self-attestation.md#two-step-cc-transfers-two_step_cc_transfers
+    verified_by: []
+
+  preapprovals:
+    supported: false
+    reason: "Implemented in the coin module but not enabled in the released Ledger Wallet; incoming Canton Coin is received via the two-step transfer flow."
+    proof: null
+    verified_by: []
+
+  # Token Standard
+  cip_0056_transfer:
+    supported: true
+    proof: proofs/ledger-wallet/ledger-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    verified_by: []
+
+  cip_0056_allocation:
+    supported: false
+    reason: "Transfers are supported; the CIP-0056 allocation flow is not yet implemented."
+    proof: null
+    verified_by: []
+
+  memo_tag_support:
+    supported: true
+    proof: proofs/ledger-wallet/ledger-wallet-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support
+    verified_by: []
+
+  # dApp Connectivity (CIP-103)
+  cip_0103_dapp_api:
+    supported: false
+    reason: "dApp connectivity for Canton is not yet available in Ledger Wallet."
+    proof: null
+    verified_by: []
+
+  walletconnect_support:
+    supported: false
+    reason: "WalletConnect is not supported for Canton in Ledger Wallet."
+    proof: null
+    verified_by: []
+
+  # Party Specific
+  key_recovery:
+    supported: true
+
+  multi_address:
+    supported: true
+
+  # Transaction Signing
+  hardware_wallet_support:
+    supported: true
+    proof: proofs/ledger-wallet/ledger-wallet-self-attestation.md#hardware-wallet-support-hardware_wallet_support
+    verified_by: []
+
+  # Wallet Capabilities
+  clear_signing:
+    supported: true
+    proof: proofs/ledger-wallet/ledger-wallet-self-attestation.md#clear-signing-clear_signing
+    verified_by: []
