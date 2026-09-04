@@ -1,0 +1,65 @@
+# Copy this file to wallets/<your-wallet-name>.yaml (lowercase, hyphenated,
+# e.g. wallets/acme-wallet.yaml) and fill in every field below. See
+# CONTRIBUTING.md for the full walkthrough (evidence files, verification,
+# regenerating the summary page).
+
+name: "Metatarz"
+wallet-name: metatarz
+website: "https://wallet.metatarz.xyz"
+contact: "support@metatarz.xyz"
+added: "2026-08-13"
+
+features:
+  wallet_model: ["Retail", "Enterprise"]
+  custody_model: "Self-custodial"
+  form_factor: ["Browser-extension"]
+  deployment_model: ["Self-hosted", "SaaS"]
+
+
+  cc_support:
+    supported: true
+    proof: proofs/metatarz/metatarz-self-attestation.md#cc-support-cc_support
+    verified_by: []
+
+  preapprovals:
+    supported: true
+    proof: proofs/metatarz/metatarz-self-attestation.md#pre-approvals-for-cc-preapprovals
+    verified_by: []
+
+  cip_0056_transfer:
+    supported: true
+    proof: proofs/metatarz/metatarz-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    verified_by: []
+
+  memo_tag_support:
+    supported: true
+    proof: proofs/metatarz/metatarz-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support
+    verified_by: []
+
+  cip_0103_dapp_api:
+    supported: true
+    proof: proofs/metatarz/metatarz-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
+    verified_by: []
+
+  registry_preapprovals:
+    supported: true
+    proof: proofs/metatarz/metatarz-self-attestation.md#pre-approvals-for-da-registry-issued-assets-registry_preapprovals
+
+  key_generation_method: "Seed phrase (BIP-39)"
+
+  key_recovery:
+    supported: true
+
+  multi_address:
+    supported: true
+
+  validator_hosting_private:
+    supported: true
+
+  clear_signing:
+    supported: true
+    proof: proofs/metatarz/metatarz-self-attestation.md#clear-signing-clear_signing
+  
+  assets_supported: ["CC", "USDC (CIP-0056)", "CBTC (CIP-0056)","CETH (CIP-0056)", "HANDL (CIP-0056)"]
+  
+  languages_supported: ["English"]
