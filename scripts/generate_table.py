@@ -204,7 +204,7 @@ def _parse_nodes(entries, pos, indent):
 
 
 def yaml_load(path):
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         text = f.read()
     entries = _preprocess(text)
     if not entries:
@@ -403,7 +403,7 @@ A linked "Not supported" means the wallet has said no with a reason
 {table_2_md}
 """
 
-    with open(args.out, "w") as f:
+    with open(args.out, "w", encoding="utf-8", newline="\n") as f:
         f.write(body)
     print(f"Wrote {args.out} ({len(wallets)} wallet(s) from {args.wallets_dir}/)")
 
