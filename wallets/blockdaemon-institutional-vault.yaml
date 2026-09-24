@@ -88,6 +88,10 @@ features:
     supported: true
     proof: proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#tokenization-tokenization
     verified_by: []
+  reward_minting:
+    supported: true
+    proof: proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#reward-minting-reward_minting
+    verified_by: []
   clear_signing:
     supported: true
     proof: proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#clear-signing-clear_signing
