@@ -1,7 +1,7 @@
 # Blockdaemon Institutional Vault — Self-Attestation Evidence
 
 Wallet name: `blockdaemon-institutional-vault`
-Last updated: 2026-08-04
+Last updated: 2026-09-21
 
 Public documentation source: [https://vault.docs.blockdaemon.com/](https://vault.docs.blockdaemon.com/)
 (repo: `mothership-public-docs`)
@@ -22,7 +22,9 @@ entries. Live Canton update IDs, party IDs, explorer links, and screenshots
 | `preapprovals` | [Canton Preapproval](https://vault.docs.blockdaemon.com/reference/cwpstartcantonpreapproval), `TransferPreapproval_SendV2` on-chain below |
 | `cip_0056_transfer` | [Add CIP56 asset](https://vault.docs.blockdaemon.com/reference/addblockchainsupportedasset), TestNet USDCx transfer below |
 | `cip_0056_allocation` | [Create Allocation](https://vault.docs.blockdaemon.com/reference/cwpstartcreateallocation), TestNet DvP allocate + settle below |
+| `reward_minting` | TestNet SV rewards minted to IV external party `svrewards_account1` via `MintingDelegation` (contract screenshot below) |
 | `memo_tag_support` | [Make Transaction](https://vault.docs.blockdaemon.com/reference/cwpstartmaketransaction) `Canton.Reason`, on-chain DevNet transfer + Vault memo below |
+| `walletconnect_support` | DA Registry WalletConnect session + Vault Canton `bd::` party screenshots below |
 | `tokenization` | DevNet MintOffer + TestNet DvP; Canton Contract Management screenshots below |
 | `wallet_gateway_signing_driver` | [canton-network/wallet `core/signing-blockdaemon`](https://github.com/canton-network/wallet/blob/main/core/signing-blockdaemon/README.md) |
 | `clear_signing` | ApproverApp screenshots below (AllocationFactory_Allocate / USDCx) |
@@ -179,6 +181,28 @@ Canton DevNet DTCC Offer Mint via Canton Contract Management:
   - Public API field: [Make Transaction](https://vault.docs.blockdaemon.com/reference/cwpstartmaketransaction) optional `Canton.Reason` (`cwpCantonSpec.Reason`).
   - On-ledger metadata key: `splice.lfdecentralizedtrust.org/reason`.
 
+## Wallet Connect support `walletconnect_support`
+
+> Connect to and sign transactions from a third-party dApp via Wallet
+> Connect.
+>
+> Suggested test: Connect to a dApp using Wallet Connect. Initiate a
+> transaction from within the dApp and sign it from the wallet. Confirm the
+> successful transaction. Optionally provide screenshots or a video
+> recording.
+
+- Transaction update ID(s): n/a (session and party-identity evidence; no dApp-initiated on-chain update attached)
+- Party ID(s): `bd::122075956b920f8d6786f4872515e900d7920c19c5c57647d434fc62b5c5229913bf`
+- Explorer link(s): n/a
+- Screenshot(s) / video:
+  - ![Vault WalletConnect session with Canton dApp](./blockdaemon-institutional-vault-self-attestation-images/walletconnect-vault-session-on.jpg)
+  - ![Vault Canton main address](./blockdaemon-institutional-vault-self-attestation-images/walletconnect-vault-canton-address.png)
+  - ![DA Registry connected Wallet party](./blockdaemon-institutional-vault-self-attestation-images/walletconnect-da-registry-connected.jpg)
+- Notes:
+  - Institutional Vault UI shows **WalletConnect is on** for Canton, with connected dApp **Canton dApp**.
+  - The same Vault Canton main address (`bd::122075956b9…`) is the DA Registry (Test) connected Wallet / Provider party (`registry.test.app.digitalasset.com/registry/onboarding`). DA Registry User ID: `bd`.
+  - Public docs: [WalletConnect Usage](https://vault.docs.blockdaemon.com/docs/walletconnect-usage); Canton sessions on the same flow: [Institutional Vault Release v3.7.0](https://vault.docs.blockdaemon.com/changelog/institutional-vault-release-v370).
+
 ## Wallet Gateway signing driver `wallet_gateway_signing_driver`
 
 > Integration with the Wallet Gateway signing driver.
@@ -213,6 +237,24 @@ Canton DevNet DTCC Offer Mint via Canton Contract Management:
   - CCM also exposes Request Mint/Burn, CIP-56 transfers, and Tradeweb DvP allocate/settle.
   - [Institutional Vault Release v3.0.0](https://vault.docs.blockdaemon.com/changelog/institutional-vault-release-v300) — Canton tokenisation application.
   - Asset registration API: [Add Canton CIP56 Token Asset](https://vault.docs.blockdaemon.com/reference/addblockchainsupportedasset).
+
+## Reward minting `reward_minting`
+
+> Claiming or minting a reward (e.g. a validator or app reward).
+>
+> Suggested test: Demonstrate the wallet claiming or minting a reward. Provide
+> the transaction update ID of the reward-minting event and a screenshot of
+> the resulting holding.
+
+- Transaction update ID(s): SV reward history for the party (individual mint update IDs are listed on the explorer page)
+- Party ID(s): beneficiary `svrewards_account1::122048c144c28dda311aaa72bb9ebd370642b55618536b565cb7dea185e868343950` (Institutional Vault external party); delegate `blockdaemon-testnet-validator-1::1221b04d86…`
+- Explorer link(s): https://lighthouse.testnet.cantonloop.com/party/svrewards_account1%3A%3A122048c144c28dda311aaa72bb9ebd370642b55618536b565cb7dea185e868343950/sv-rewards
+- Screenshot(s) / video: ![MintingDelegation contract](./blockdaemon-institutional-vault-self-attestation-images/reward-minting-minting-delegation.jpg)
+- Notes:
+  - Canton TestNet Super Validator rewards mint directly to this Institutional Vault external party.
+  - Active Splice `MintingDelegation` (`splice-wallet#9.1.28`): contract ID `00d7d84a72d80889fbdb25cde79196a0345a6cfc8237acb79d4b34325d8743de69ca12122838d96efc95657f4c85db704c547d551787189c42a4fd7f1b24d044731`; beneficiary is the IV party, delegate is `blockdaemon-testnet-validator-1`; choices include **Mint** and **Assign And Mint**.
+  - Collection uses that delegation (`MintingDelegation_Mint` / `MintingDelegation_AssignAndMint`) to mint eligible reward coupons into the beneficiary's CC holding.
+  - Reference: [Rewards minting](https://docs.canton.network/global-synchronizer/splice-fundamentals/rewards-minting).
 
 ## Clear signing `clear_signing`
 
