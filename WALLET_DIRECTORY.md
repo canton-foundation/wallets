@@ -70,9 +70,9 @@ A linked "Not supported" means the wallet has said no with a reason
 | &nbsp;&nbsp;&nbsp;&nbsp;Threshold Signature Scheme | ✅ | ✅ | — | [Not supported](wallets/walley.yaml) | ✅ | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Hardware wallet support | [✅](proofs/dfns/dfns-self-attestation.md#hardware-wallet-support-hardware_wallet_support) | ✅ | — | [Not supported](wallets/walley.yaml) | — | — | — | [✅](proofs/ledger-wallet/ledger-wallet-self-attestation.md#hardware-wallet-support-hardware_wallet_support) |
 | **Wallet Capabilities** |  |  |  |  |  |  |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Compliance | ✅ | — | — | — | ✅ | — | — | — |
+| &nbsp;&nbsp;&nbsp;&nbsp;Compliance | — | — | — | — | — | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Tokenization | — | ✅ | — | — | [✅](proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#tokenization-tokenization) | — | — | — |
-| &nbsp;&nbsp;&nbsp;&nbsp;Reward minting | — | — | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#reward-minting-reward_minting) | [Not supported](wallets/walley.yaml) | — | — | — | — |
+| &nbsp;&nbsp;&nbsp;&nbsp;Reward minting | — | — | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#reward-minting-reward_minting) | [Not supported](wallets/walley.yaml) | [✅](proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#reward-minting-reward_minting) | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Transfer object / proof of transfer support | — | ✅ | — | [Not supported](wallets/walley.yaml) | — | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Clear signing | [✅](proofs/dfns/dfns-self-attestation.md#clear-signing-clear_signing) | — | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#clear-signing-clear_signing) | [✅](proofs/walley/walley-self-attestation.md#clear-signing-clear_signing) | [✅](proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#clear-signing-clear_signing) | — | [✅](proofs/metatarz/metatarz-self-attestation.md#clear-signing-clear_signing) | [✅](proofs/ledger-wallet/ledger-wallet-self-attestation.md#clear-signing-clear_signing) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Integrated swaps | — | ✅ | [Not supported](wallets/askardex-wallet.yaml) | [✅](proofs/walley/walley-self-attestation.md#integrated-swaps-integrated_swaps) | — | — | — | — |

@@ -239,8 +239,7 @@ features:
   - id: compliance
     name: "Compliance"
     category: "Wallet Capabilities"
-    type: boolean
-    self_attested_only: true
+    type: freetext
 
   - id: tokenization
     name: "Tokenization"
