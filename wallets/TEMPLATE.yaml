@@ -264,11 +264,11 @@ features:
 
   # Wallet Capabilities
 
-  ## Compliance capabilities/certifications the wallet supports. Not Canton
-  ## Network specific -- no proof needed.
-  # compliance:
-  #   supported: true
-  #   # reason: "<short explanation>"
+  ## Free-text description of compliance capabilities/certifications the
+  ## wallet supports (e.g. "SOC 2 Type II", "ISO 27001", licensing/registration
+  ## details). Not Canton Network specific -- no proof needed. Omit or leave
+  ## empty if none.
+  # compliance: "<short description of certifications/capabilities>"
 
   ## Tokenization capabilities the wallet supports.
   # tokenization:

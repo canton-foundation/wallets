@@ -76,8 +76,11 @@ features:
     supported: true
 
   # Wallet Capabilities
-  compliance:
-    supported: true
+  # TODO: "compliance" changed from a boolean checkbox to a free-text field.
+  # Blockdaemon previously marked this true, but that carries no descriptive
+  # text to migrate forward -- needs a follow-up from Blockdaemon with the
+  # actual certifications/capabilities to fill in here, e.g.:
+  # compliance: "<short description of certifications/capabilities>"
   tokenization:
     supported: true
     proof: proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#tokenization-tokenization
