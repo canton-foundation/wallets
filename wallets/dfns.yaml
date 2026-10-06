@@ -71,11 +71,7 @@ features:
     verified_by: []
 
   # Wallet Capabilities
-  # TODO: "compliance" changed from a boolean checkbox to a free-text field.
-  # Dfns previously marked this true, but that carries no descriptive text
-  # to migrate forward -- needs a follow-up from Dfns with the actual
-  # certifications/capabilities to fill in here, e.g.:
-  # compliance: "<short description of certifications/capabilities>"
+  compliance: "SOC 2 Type II, ISO 27001, ISO 27017 and ISO 27018 certified; built-in KYT/AML transaction screening (Chainalysis, Elliptic, Global Ledger) and Travel Rule support (Notabene, Sumsub, Global Ledger), enforced through the policy engine with audit logs"
   clear_signing:
     supported: true
     proof: proofs/dfns/dfns-self-attestation.md#clear-signing-clear_signing

@@ -70,7 +70,7 @@ A linked "Not supported" means the wallet has said no with a reason
 | &nbsp;&nbsp;&nbsp;&nbsp;Threshold Signature Scheme | ✅ | ✅ | — | [Not supported](wallets/walley.yaml) | ✅ | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Hardware wallet support | [✅](proofs/dfns/dfns-self-attestation.md#hardware-wallet-support-hardware_wallet_support) | ✅ | — | [Not supported](wallets/walley.yaml) | — | — | — | [✅](proofs/ledger-wallet/ledger-wallet-self-attestation.md#hardware-wallet-support-hardware_wallet_support) |
 | **Wallet Capabilities** |  |  |  |  |  |  |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;Compliance | — | — | — | — | — | — | — | — |
+| &nbsp;&nbsp;&nbsp;&nbsp;Compliance | SOC 2 Type II, ISO 27001, ISO<br>27017 and ISO 27018 certified;<br>built-in KYT/AML transaction<br>screening (Chainalysis,<br>Elliptic, Global Ledger) and<br>Travel Rule support (Notabene,<br>Sumsub, Global Ledger),<br>enforced through the policy<br>engine with audit logs | — | — | — | — | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Tokenization | — | ✅ | — | — | [✅](proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#tokenization-tokenization) | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Reward minting | — | — | [✅](proofs/askardex-wallet/askardex-wallet-self-attestation.md#reward-minting-reward_minting) | [Not supported](wallets/walley.yaml) | [✅](proofs/blockdaemon-institutional-vault/blockdaemon-institutional-vault-self-attestation.md#reward-minting-reward_minting) | — | — | — |
 | &nbsp;&nbsp;&nbsp;&nbsp;Transfer object / proof of transfer support | — | ✅ | — | [Not supported](wallets/walley.yaml) | — | — | — | — |
