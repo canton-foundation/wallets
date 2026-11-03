@@ -1,0 +1,30 @@
+@ participant.id
+res0: ParticipantId = PAR::cantonloop-mainnet-1::12205fb70ce1...
+
+@ participant.topology.party_to_participant_mappings.list_from_all(
+    proposals = false,
+    filterParty = "da8b778ca6c1f85d745917cd0b3a6ebf::1220d5533f129febc3cf5409ae08cc7907d36f2e550e8702c77aa56fd288afbf53f5"
+  )
+res1: Seq[com.digitalasset.canton.admin.api.client.data.topology.ListPartyToParticipantResult] = Vector(
+  ListPartyToParticipantResult(
+    context = BaseResult(
+      storeId = Synchronizer(id = Right(value = global-domain::1220b1431ef2...::35-6)),
+      validFrom = 2026-10-28T19:16:28.354449Z,
+      validUntil = None,
+      sequenced = 2026-10-28T19:16:28.104449Z,
+      operation = Replace,
+      transactionHash = TxHash(hash = SHA-256:96330b927900...),
+      serial = PositiveNumeric(value = 1),
+      signedBy = Vector(12205fb70ce1..., 1220631aa827..., 1220889c948c..., 1220d5533f12...)
+    ),
+    item = PartyToParticipant(
+      partyId = da8b778ca6c1f85d745917cd0b3a6ebf::1220d5533f12...,
+      threshold = 2,
+      participants = Map(
+        PAR::cantonloop-mainnet-1::12205fb70ce1... -> Confirmation,
+        PAR::DigitalAsset-Coval5North-1::1220889c948c... -> Confirmation,
+        PAR::validator-MPCH-MULTI-1::1220631aa827... -> Confirmation
+      )
+    )
+  )
+)

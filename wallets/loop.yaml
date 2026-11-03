@@ -1,0 +1,154 @@
+name: "Loop Wallet"
+wallet-name: loop
+website: "https://wallet.looptech.io"
+contact: "support@looptech.io"
+added: "2026-10-29"
+slack_party_scaling_channel_joined: true
+
+features:
+
+  wallet_model: [Retail]
+
+  custody_model: Self-custodial
+
+  form_factor: [Browser]
+
+  deployment_model: [SaaS]
+
+  cc_support:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#cc-support-cc_support
+    verified_by: []
+
+  two_step_cc_transfers:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#two-step-cc-transfers-two_step_cc_transfers
+    verified_by: []
+
+  preapprovals:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#pre-approvals-for-cc-preapprovals
+    verified_by: []
+
+  cip_0056_transfer:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    verified_by: []
+
+  cip_0056_allocation:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#cip-0056-token-standard-allocation-support-cip_0056_allocation
+    verified_by: []
+
+  cip_112_v2:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#cip-112-token-standard-v2-support-cip_112_v2
+    verified_by: []
+
+  memo_tag_support:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support
+    verified_by: []
+
+  cip_0103_dapp_api:
+    supported: false
+    reason: "In development"
+    proof: null
+    verified_by: []
+
+  walletconnect_support:
+    supported: false
+    reason: "dApp connectivity uses Loop's own SDK and ticket-based connection protocol."
+    proof: null
+    verified_by: []
+
+  registry_preapprovals:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#pre-approvals-for-da-registry-issued-assets-registry_preapprovals
+    verified_by: []
+
+  wallet_gateway_signing_driver:
+    supported: false
+    reason: "A Wallet Gateway signing driver integration is not implemented."
+    proof: null
+    verified_by: []
+
+  key_generation_method: "Ed25519 key pair generated in the browser at sign-up. Users back up the private key directly; no seed phrase. The private key is available in wallet Settings. Backup import restores access after losing a password or passkey; recovery requires the saved private key."
+
+  key_recovery:
+    supported: true
+
+  social_recovery:
+    supported: false
+    reason: "Guardian-based recovery is not supported."
+
+  multi_address:
+    supported: false
+    reason: "Multiple accounts within one wallet are not supported."
+
+  distributed_parties:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#distributed-parties-distributed_parties
+    verified_by: []
+
+  utxo_merge_delegation:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#utxo-merge-delegation-contract-enabled-utxo_merge_delegation
+    verified_by: []
+
+  validator_hosting_byov:
+    supported: false
+    reason: "The current Loop wallet does not expose a bring-your-own-validator option."
+
+  validator_hosting_private:
+    supported: false
+    reason: "The current Loop wallet does not expose a dedicated private-validator option."
+
+  validator_hosting_shared:
+    supported: true
+
+  policy_workflows:
+    supported: false
+    reason: "Not offered"
+
+  threshold_signature_scheme:
+    supported: false
+    reason: "Wallet transactions use a single Ed25519 private key; MPC threshold signing is not implemented."
+
+  hardware_wallet_support:
+    supported: false
+    reason: "Direct transaction signing with a hardware wallet is not implemented."
+    proof: null
+    verified_by: []
+
+  compliance: "Loop Wallet security audit dated 2026-07-29; public summary: https://docs.fivenorth.io/security/introduction/. This is a security audit, not a compliance certification."
+
+  tokenization:
+    supported: false
+    reason: "The current Loop wallet does not expose a token issuance or tokenization flow."
+    proof: null
+    verified_by: []
+
+  transfer_proof:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#transfer-object--proof-of-transfer-support-transfer_proof
+    verified_by: []
+
+  clear_signing:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#clear-signing-clear_signing
+    verified_by: []
+
+  integrated_swaps:
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#integrated-swaps-integrated_swaps
+    verified_by: []
+
+  reward_minting:
+    supported: false
+    reason: "Dev Fund coupon claiming is planned."
+    proof: null
+    verified_by: []
+
+  assets_supported: ["Canton Coin (CC)", "CIP-0056 tokens"]
+  languages_supported: ["English"]
