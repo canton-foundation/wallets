@@ -1,0 +1,14 @@
+{
+  "source": "Provider-supplied query result from wallet_prod.public.active_contracts; filtered to consuming = FALSE. Database mirror export, not a direct participant ACS response.",
+  "network": "Mainnet (provider context)",
+  "captured_at": "2026-10-28T20:40:09.364445Z",
+  "created_at": "2026-04-06T22:24:31.814096Z",
+  "contract_id": "005db731347322fa683f9a18266be050b9ac2c3f24cbf175f56bf04e71430d651aca12122034471ffb4b40cb9cf335a58391be34980108b63ecb6fcd34780df689d6b693f4",
+  "template_id": "7a75ef6e69f69395a4e60919e228528bb8f3881150ccfde3f31bcc73864b18ab:Utility.Registry.App.V0.Model.TransferPreapproval:TransferPreapproval",
+  "create_argument": {
+    "operator": "auth0_007c6643538f2eadd3e573dd05b9::12205bcc106efa0eaa7f18dc491e5c6f5fb9b0cc68dc110ae66f4ed6467475d7c78e",
+    "receiver": "45b69436cb33956f83372408378c2cec::12204673428d318925b0e10d67b8c1bdd6b9464e04a75024d882fe5e7077c2722082",
+    "instrumentAdmin": "decentralized-usdc-interchain-rep::12208115f1e168dd7e792320be9c4ca720c751a02a3053c7606e1c1cd3dad9bf60ef",
+    "instrumentAllowances": []
+  }
+}

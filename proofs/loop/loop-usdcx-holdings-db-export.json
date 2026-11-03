@@ -1,0 +1,25 @@
+{
+  "source": "Provider-supplied wallet_prod public.active_contracts query results; consuming = FALSE, filtered by owner and issuer.",
+  "network": "mainnet",
+  "records": [
+    {
+      "contract_id": "002db4958dd25c0d22485c35d48b774fd13f29e7c2b9617503d37d9d850f4a309bca1212202180f15ff5bfd8bb08bc8a341578b4c9622c0b86afd99d46577f313ad2c86e7d",
+      "template_id": "415a1ec96a9e2839453e9aa1c5c71b6511c008c79511cb6f873e0b7393fe3b92:Utility.Registry.Holding.V0.Holding:Holding",
+      "create_argument": {
+        "label": "",
+        "owner": "45b69436cb33956f83372408378c2cec::12204673428d318925b0e10d67b8c1bdd6b9464e04a75024d882fe5e7077c2722082",
+        "amount": "1.0030448045",
+        "operator": "auth0_007c6643538f2eadd3e573dd05b9::12205bcc106efa0eaa7f18dc491e5c6f5fb9b0cc68dc110ae66f4ed6467475d7c78e",
+        "provider": "Bridge-Operator::1220c8448890a70e65f6906bd48d797ee6551f094e9e6a53e329fd5b2b549334f13f",
+        "registrar": "decentralized-usdc-interchain-rep::12208115f1e168dd7e792320be9c4ca720c751a02a3053c7606e1c1cd3dad9bf60ef",
+        "instrument": {
+          "id": "USDCx",
+          "scheme": "RegistrarInternalScheme",
+          "source": "decentralized-usdc-interchain-rep::12208115f1e168dd7e792320be9c4ca720c751a02a3053c7606e1c1cd3dad9bf60ef"
+        }
+      },
+      "created_at": "2026-10-28T21:02:48.147832Z",
+      "captured_at": "2026-10-28T21:14:57.089432Z"
+    }
+  ]
+}

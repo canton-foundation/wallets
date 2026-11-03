@@ -1,0 +1,22 @@
+{
+  "source": "Provider-supplied wallet_prod.public.active_contracts query result filtered to consuming = FALSE; database mirror, not direct participant ACS.",
+  "network": "Mainnet (provider context)",
+  "captured_at": "2026-10-28T20:50:23.855555Z",
+  "created_at": "2026-10-28T20:47:26.187862Z",
+  "contract_id": "00a279a51d28da584aa4ded02d50398e50708fd5893da1bbc9b9a24508e79f29baca12122075b8b5530304ff1a5b179577be6e8b368ece3243f5c5a798d8c958b471fc9f1e",
+  "template_id": "e619395ba1dfef76d541bdb61083c9dedbf5a4863407170bc6abf82cd6d27975:MergeDelegationWithFees:MergeDelegation",
+  "create_argument": {
+    "meta": {
+      "values": {}
+    },
+    "owner": "45b69436cb33956f83372408378c2cec::12204673428d318925b0e10d67b8c1bdd6b9464e04a75024d882fe5e7077c2722082",
+    "operator": "utxo-merge::12205fb70ce14897d06baec18a4b889f296c765a8325fd3d99cc084b1f980426ac12",
+    "feeReceiver": "cantonloop-mainnet-1::12205fb70ce14897d06baec18a4b889f296c765a8325fd3d99cc084b1f980426ac12",
+    "maxFeeAmount": "400.0000000000",
+    "feeInstrumentId": {
+      "id": "Amulet",
+      "admin": "DSO::1220b1431ef217342db44d516bb9befde802be7d8899637d290895fa58880f19accc"
+    },
+    "minInputHoldings": "10"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source": "Selected fields from provider-supplied VictoriaLogs entry; email and infrastructure details omitted.",
+  "network": "Mainnet (source host 5n-app-mainnet2 and mainnet DSO)",
+  "_msg": "merge command submitted",
+  "_time": "2026-10-28T15:24:43.534058Z",
+  "command_id": "loop-utxo-merge-dbh17cplm1u000bdjskg",
+  "input_holding_count": "50",
+  "instrument_admin": "DSO::1220b1431ef217342db44d516bb9befde802be7d8899637d290895fa58880f19accc",
+  "instrument_id": "Amulet",
+  "merge_amount": "25005.4150418439",
+  "merge_fee_status": "with_fee",
+  "merge_source": "auto_cron",
+  "fee_amount_cc": "13.5813712370041486",
+  "party_id": "c2ef9ce8cffe23343f310f32635501f6::12206b146d0383996179b717e689299956036467e9a255ec58bc01c41c3982b14348",
+  "process": "merge-holdings",
+  "service": "utxomanager",
+  "update_id": "1220d5238697368599be15d3133d54234ab15ae5ebe2c4d3e8b428b1d9733f157b3b"
+}
