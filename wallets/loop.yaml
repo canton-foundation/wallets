@@ -51,14 +51,13 @@ features:
     verified_by: []
 
   cip_0103_dapp_api:
-    supported: false
-    reason: "In development"
-    proof: null
+    supported: true
+    proof: proofs/loop/loop-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
     verified_by: []
 
   walletconnect_support:
     supported: false
-    reason: "dApp connectivity uses Loop's own SDK and ticket-based connection protocol."
+    reason: "WalletConnect is not supported. dApps connect through the Loop SDK, including its CIP-103 provider."
     proof: null
     verified_by: []
 
