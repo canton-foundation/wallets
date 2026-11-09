@@ -55,9 +55,14 @@ verifiers.
   feature. The heading text matters: GitHub turns it into the page anchor
   that `WALLET_DIRECTORY.md` and the wallet's `proof:` /
   `verified_by[].proof` fields link to -- keep headings exactly as shown
-  and don't reuse one for two different features. Free-text features
-  (Wallet Type block, `key_generation_method`, `assets_supported`,
-  `languages_supported`) never get a heading here as there's no link to 
+  and don't reuse one for two different features. When copying that anchor
+  into YAML, use GitHub's slug: lowercase, punctuation dropped, spaces to
+  single hyphens. A slash in the heading becomes one hyphen, not `--`.
+  Example: heading text `Transfer object / proof of transfer support`
+  plus the feature id `transfer_proof` anchors as
+  `#transfer-object-proof-of-transfer-support-transfer_proof`. Free-text
+  features (Wallet Type block, `key_generation_method`, `assets_supported`,
+  `languages_supported`) never get a heading here as there's no link to
   proof.
 
 ## Applying as a new wallet provider
