@@ -131,7 +131,7 @@ features:
 
   transfer_proof:
     supported: true
-    proof: proofs/loop/loop-self-attestation.md#transfer-object--proof-of-transfer-support-transfer_proof
+    proof: proofs/loop/loop-self-attestation.md#transfer-object-proof-of-transfer-support-transfer_proof
     verified_by: []
 
   clear_signing:
