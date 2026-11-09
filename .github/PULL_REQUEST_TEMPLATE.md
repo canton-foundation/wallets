@@ -20,7 +20,7 @@ process.
 - [ ] `wallets/<wallet-name>.yaml` added or updated (self-attestation)
 - [ ] A heading added to `proofs/<wallet-name>/<wallet-name>-self-attestation.md`
       for every feature newly claimed as `supported: true`
-- [ ] `python scripts/generate_table.py` was run and the regenerated
+- [ ] `python3 scripts/generate_table.py` was run and the regenerated
       `WALLET_DIRECTORY.md` is included in this PR (a CI check will catch
       this if it's missed, but running it locally saves a round trip)
 - [ ] If applying for the first time: confirmed membership in
