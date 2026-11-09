@@ -103,10 +103,10 @@ features:
 
   # Network Relevant Features
   # Not claimed: no evidence of merge-delegation support.
-  utxo_merge_delegation:
-     supported: true
-     proof: null
-     verified_by: []
+  # utxo_merge_delegation:
+  #   supported: true
+  #   proof: null
+  #   verified_by: []
 
   # Validator Hosting
   validator_hosting_byov:
