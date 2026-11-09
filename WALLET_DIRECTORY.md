@@ -60,7 +60,7 @@ A linked "Not supported" means the wallet has said no with a reason
 | &nbsp;&nbsp;&nbsp;&nbsp;Multi-address / account | ✅ | ✅ | — | [Not supported](wallets/walley.yaml) | ✅ | — | ✅ | ✅ | ✅ | [Not supported](wallets/loop.yaml) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Distributed parties | — | ✅ | — | [Not supported](wallets/walley.yaml) | — | — | — | — | [Not supported](wallets/mahawallet.yaml) | [✅](proofs/loop/loop-self-attestation.md#distributed-parties-distributed_parties) |
 | **Network Relevant Features** |  |  |  |  |  |  |  |  |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;UTXO merge delegation contract enabled | — | ✅ | — | [✅](proofs/walley/walley-self-attestation.md#utxo-merge-delegation-contract-enabled-utxo_merge_delegation) | — | — | — | — | ✅ | [✅](proofs/loop/loop-self-attestation.md#utxo-merge-delegation-contract-enabled-utxo_merge_delegation) |
+| &nbsp;&nbsp;&nbsp;&nbsp;UTXO merge delegation contract enabled | — | ✅ | — | [✅](proofs/walley/walley-self-attestation.md#utxo-merge-delegation-contract-enabled-utxo_merge_delegation) | — | — | — | — | — | [✅](proofs/loop/loop-self-attestation.md#utxo-merge-delegation-contract-enabled-utxo_merge_delegation) |
 | **Validator Hosting** |  |  |  |  |  |  |  |  |  |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;Bring-Your-Own-Validator (BYOV) | ✅ | — | — | [Not supported](wallets/walley.yaml) | ✅ | — | — | — | ✅ | [Not supported](wallets/loop.yaml) |
 | &nbsp;&nbsp;&nbsp;&nbsp;Private validator | — | ✅ | — | — | ✅ | — | ✅ | — | [Not supported](wallets/mahawallet.yaml) | [Not supported](wallets/loop.yaml) |
