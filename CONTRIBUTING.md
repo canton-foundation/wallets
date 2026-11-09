@@ -60,7 +60,8 @@ verifiers.
   single hyphens. A slash in the heading becomes one hyphen, not `--`.
   Example: heading text `Transfer object / proof of transfer support`
   plus the feature id `transfer_proof` anchors as
-  `#transfer-object-proof-of-transfer-support-transfer_proof`. Free-text
+  `#transfer-object-proof-of-transfer-support-transfer_proof`. CI runs
+  `python3 scripts/verify_proof_anchors.py` on proof URL changes. Free-text
   features (Wallet Type block, `key_generation_method`, `assets_supported`,
   `languages_supported`) never get a heading here as there's no link to
   proof.
