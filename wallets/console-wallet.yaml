@@ -1,0 +1,87 @@
+name: 'Console Wallet'
+wallet-name: console-wallet
+website: 'https://consolewallet.io'
+contact: 'support@consolewallet.io'
+added: '2026-11-12'
+slack_party_scaling_channel_joined: true
+
+features:
+  # --- Wallet Type ---
+  wallet_model: [Retail]
+  custody_model: Self-custodial
+  form_factor: [Mobile, Browser-extension, Desktop]
+  deployment_model: [SaaS]
+
+  # --- Canton Coin ---
+  cc_support:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#cc-support-cc_support
+    verified_by: []
+  two_step_cc_transfers:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#two-step-cc-transfers-two_step_cc_transfers
+    verified_by: []
+  preapprovals:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#pre-approvals-for-cc-preapprovals
+    verified_by: []
+
+  # --- Token Standard ---
+  cip_0056_transfer:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#cip-0056-token-standard-transfer-support-cip_0056_transfer
+    verified_by: []
+  memo_tag_support:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#memo-tag-support-for-transfers-to-omnibus-accounts-memo_tag_support
+    verified_by: []
+
+  # --- dApp Connectivity ---
+  cip_0103_dapp_api:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#cip-0103-dapp-api-support-cip_0103_dapp_api
+    verified_by: []
+  walletconnect_support:
+    supported: false
+    reason: 'WalletConnect is available for EVM networks; Canton dApps connect via CIP-0103 (extension) or QR pairing with the mobile app'
+
+  # --- Party Specific ---
+  key_generation_method: "Seed phrase (mnemonic) generated on the user's device; keys never leave the device; unlock via password, passkeys (extension) or biometrics (mobile)"
+  key_recovery:
+    supported: true
+  social_recovery:
+    supported: false
+    reason: 'Recovery is via seed phrase or private key export'
+  multi_address:
+    supported: true
+
+  # --- Network Relevant Features ---
+  utxo_merge_delegation:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#utxo-merge-delegation-contract-enabled-utxo_merge_delegation
+    verified_by: []
+
+  # --- Transaction Signing ---
+  hardware_wallet_support:
+    supported: false
+    reason: 'Not supported yet'
+
+  # --- Wallet Capabilities ---
+  clear_signing:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#clear-signing-clear_signing
+    verified_by: []
+  integrated_swaps:
+    supported: true
+    proof: proofs/console-wallet/console-wallet-self-attestation.md#integrated-swaps-integrated_swaps
+    verified_by: []
+
+  assets_supported:
+    [
+      'CC',
+      'USDCx',
+      'CBTC',
+      'Other CIP-0056 tokens (auto-detected)',
+      'ETH / ERC-20 on any EVM networks (Ethereum and Base added by default)',
+    ]
+  languages_supported: [English, Deutsch, Indonesia, Türkçe, español, français, italiano, हिन्दी]
