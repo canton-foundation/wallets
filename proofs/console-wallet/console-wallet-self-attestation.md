@@ -1,7 +1,7 @@
 # Console Wallet — Self-Attestation Evidence
 
 Wallet: `console-wallet` · [Website](https://consolewallet.io) · <support@consolewallet.io>\
-Updated: **2026-11-13** · Network: **Devnet / Testnet/ Mainnet**
+Updated: **2026-11-13** · Network: **Devnet / Testnet / Mainnet**
 
 Evidence includes public transaction links on [CCView](https://ccview.io) and wallet screenshots. Console Wallet ships as a browser extension ([Chrome Web Store](https://chromewebstore.google.com/detail/console-wallet/lpnfhpbpmlobjlgkdmnjieeihjmihhjd)), an iOS app ([App Store](https://apps.apple.com/us/app/console-wallet/id6754840343)) and an Android app ([Google Play](https://play.google.com/store/apps/details?id=io.ccview.wallet)). Documentation: [User Guide](https://consolewallet.io/user) · [Developer docs](https://consolewallet.io/develop) · [dApp sandbox](https://consolewallet.io/sandbox).
 
@@ -44,6 +44,12 @@ Console Wallet transfers non-CC tokens. The examples show `consolewallet-maslach
 
 Other CIP-0056 tokens, such as CBTC, are also supported. Canton token balances are detected automatically.
 
+## CIP-112 token standard v2 support `cip_112_v2`
+
+Console Wallet supports CIP-112 transfer.
+
+[Receipt](./console-wallet-self-attestation-images/cip_112_v2-received.png) · [Transaction](https://ccview.io/updates/122030cf3f402ec20500cd00ac592189decb63dcba74c97742178d1e076a2490965e/)
+
 ## Memo tag support for transfers to omnibus accounts `memo_tag_support`
 
 Console Wallet writes memos to `splice.lfdecentralizedtrust.org/reason`. The example sends **654.924107 CC** to the omnibus deposit account `unionchainpayin` with memo `6277749825087064`.
@@ -64,7 +70,7 @@ Connection tested with [PartyLayer](https://partylayer.xyz/). A public demo is a
 
 Console Wallet supports automatic UTXO merging. Enabling "Merge UTXOs" creates a `Splice.Util.Token.Wallet.MergeDelegation:MergeDelegation` contract for the party.
 
-[Settings](./console-wallet-self-attestation-images/utxo_merge_delegation-setting.png) · [Party](https://ccview.io/party/consolewallet-maslach_3::122056469ab9bd7bbfa03758dfb7d879529c42176722e31f935f88749d2585e6fd7d/)
+[Innit update](https://ccview.io/updates/12200473b3156e1ef14eaa5643e23bdb07f3014173aa6b3af6774f6603bdd52043c5/) · [Confirm update](https://ccview.io/updates/12201fa5dd097b018f40e6bcca1c1aa858c1f33b8bbb84c8a6ee803b074ee707a180/) · [Settings](./console-wallet-self-attestation-images/utxo_merge_delegation-setting.png) · [Party](https://ccview.io/party/consolewallet-clear_mainnet::12202070658c6b0b4a69b1238e9d1ce34a7380176cef20c6b697211cae585e6d199f/)
 
 "Manual merge UTXOs" is also available for immediate consolidation.
 
@@ -73,6 +79,15 @@ Console Wallet supports automatic UTXO merging. Enabling "Merge UTXOs" creates a
 Console Wallet shows readable details before confirmation: recipient, sender account, network, expiration date, traffic, amount, network fee, total and memo.
 
 [Input screenshot](./console-wallet-self-attestation-images/clear_signing-input-steps.png) · [Review screenshot](./console-wallet-self-attestation-images/clear_signing-confirm.png) · [Transaction](https://ccview.io/transfers/1220fba1a37e0e5a3bd2259e8dc20ea3d3f89e47dca54275cf947aff5acf102de1d3:1/)
+
+## Pre-approvals for DA Registry issued assets `registry_preapprovals`
+
+Console Wallet supports pre-approvals for DA Registry issued assets.
+
+[Settings](./console-wallet-self-attestation-images/registry_preapprovals-settings.png) ·
+[Transaction](https://ccview.io/updates/12203e2558402564bb4c011a8920197cca26894dbf92f84a034cba9e475ac101f93c/)
+
+Tokens from known registries are detected automatically, and users can enable pre-approvals for each. Up to 4 pre-approval changes are allowed per day.
 
 ## Integrated swaps `integrated_swaps`
 
