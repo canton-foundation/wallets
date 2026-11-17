@@ -1,0 +1,26 @@
+name: Verify proof heading anchors
+
+# Fails the PR when a wallets/*.yaml proof / verified_by.proof URL
+# includes a #fragment that does not match a Markdown heading anchor
+# in the referenced proofs/ file.
+
+on:
+  pull_request:
+    paths:
+      - "wallets/**"
+      - "proofs/**"
+      - "scripts/verify_proof_anchors.py"
+      - ".github/workflows/verify-proof-anchors.yml"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Verify proof heading anchors
+        run: python3 scripts/verify_proof_anchors.py

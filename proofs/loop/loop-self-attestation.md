@@ -1,7 +1,7 @@
 # Loop Wallet — Self-Attestation Evidence
 
 Wallet: `loop` · [Website](https://wallet.looptech.io) · support@looptech.io  
-Updated: **2026-10-28** · Network: **Mainnet only**
+Updated: **2026-11-05** · Network: **Mainnet only**
 
 Evidence includes public transaction links, wallet screenshots, and provider-supplied database and console records. Provider confirmations are identified below.
 
@@ -54,6 +54,12 @@ Registry metadata collected 2026-10-27; holding captured 2026-10-28 at 21:14:57 
 Loop preserves memos in `splice.lfdecentralizedtrust.org/reason`. The example includes the memo in both the transfer request and completed result. This example demonstrates memo placement.
 
 [Transaction](https://data.looptech.io/transactions/122053355b418a285d33d7ab7b2a1e9ecf912f8d48c479e1341aa37b4109da06d1c0)
+
+## CIP-0103 dApp API support `cip_0103_dapp_api`
+
+Loop supports CIP-103 through `loop.getCip103Provider()` in Loop SDK 0.16.0, targeting Canton dApp API 0.5.0. The provider supports dApp connection, wallet approval and signing, and ledger-confirmed transaction results through `prepareExecuteAndWait` or `txChanged` events. Shipped support is provider-confirmed as of 2026-11-05.
+
+[Provider documentation](https://docs.fivenorth.io/loop-sdk/cip103/)
 
 ## Pre-approvals for DA Registry issued assets `registry_preapprovals`
 
