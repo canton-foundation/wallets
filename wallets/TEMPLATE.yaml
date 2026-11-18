@@ -1,7 +1,7 @@
 # Copy this file to wallets/<your-wallet-name>.yaml (lowercase, hyphenated,
 # e.g. wallets/acme-wallet.yaml) and fill in every field below. See
 # CONTRIBUTING.md for the full walkthrough (evidence files, verification,
-# regenerating the summary page).
+# previewing the summary page).
 
 name: "Your Wallet Name"
 wallet-name: your-wallet-name    # lowercase, hyphenated -- must match proofs/<wallet-name>/

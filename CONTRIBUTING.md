@@ -21,12 +21,15 @@ verifiers.
    to `proofs/<wallet-name>/<wallet-name>-third-party-attestation.md` and a
    `verified_by` entry in the wallet's YAML.
 5. `WALLET_DIRECTORY.md` is generated from all `wallets/*.yaml` files and is
-   the public page people read. Never edit it by hand.
+   the public page people read. A GitHub Action rebuilds it on `main` after
+   every merge -- never edit it by hand, and don't include it in your PR.
 
 ## The three places data lives
 
 - **`WALLET_DIRECTORY.md`** -- the generated summary table everyone reads.
-  Never edit it by hand; it's produced by `scripts/generate_table.py`.
+  Never edit it by hand or commit it in a PR; it's produced by
+  `scripts/generate_table.py`, which runs automatically on `main` after
+  each merge.
 - **`wallets/<wallet-name>.yaml`** -- one file per wallet provider, holding
   their name, website, and their claim (`supported: true/false`) on every
   feature. This is the only file a wallet provider edits to update their
@@ -90,18 +93,22 @@ verifiers.
    require proof. For those, just set `supported` (and `reason` if false) 
    in your wallet YAML and skip `proof`/`verified_by` and the evidence 
    heading entirely -- there's no mechanism to back or verify these claims.
-3. Run `python3 scripts/generate_table.py` and include the regenerated
-   `WALLET_DIRECTORY.md` in your PR. No install step -- it only uses the
-   Python standard library, so any Python 3 works.
-4. Open a PR using the pull request template. A maintainer will review
-   and, once approved, merge your PR.
+3. Open a PR using the pull request template. Commit only your
+   `wallets/` and `proofs/` files -- **not** `WALLET_DIRECTORY.md`. The PR
+   check builds the page with your change and attaches it as a
+   `wallet-directory-preview` artifact so you and the reviewers can see how
+   your listing will look (see "Previewing the summary page" below).
+4. A maintainer will review and, once approved, merge your PR. Your
+   listing appears on `WALLET_DIRECTORY.md` a minute or two later, when the
+   page is rebuilt automatically.
 
 ## Updating an existing listing
 
 Same process, but scoped to the fields that changed. Because each wallet
-has its own YAML file, your PR only touches your own file (plus the
-generated `WALLET_DIRECTORY.md`) -- it won't conflict with other wallets'
-submissions.
+has its own YAML file and proofs folder, and the shared
+`WALLET_DIRECTORY.md` is rebuilt after merge rather than committed in
+PRs, your PR only touches your own files -- it won't conflict with other
+wallets' submissions, even ones opened on the same day.
 
 ## Marking a feature as not supported
 
@@ -141,11 +148,11 @@ To verify a feature that does support it:
        result: verified
        proof: proofs/<wallet-name>/<wallet-name>-third-party-attestation.md#<anchor-for-your-heading>
    ```
-4. Run `python3 scripts/generate_table.py` and include the regenerated
-   `WALLET_DIRECTORY.md` in your PR, same as a wallet provider would.
-5. Open a PR. Once merged, that feature's cell on `WALLET_DIRECTORY.md`
-   links your name (with a 🛡️) to your evidence, alongside the wallet's
-   own self-attestation link.
+4. Open a PR with your `proofs/` and `wallets/` changes only -- don't
+   include `WALLET_DIRECTORY.md`, same as a wallet provider. Once merged,
+   the page is rebuilt automatically and that feature's cell on
+   `WALLET_DIRECTORY.md` links your name (with a 🛡️) to your evidence,
+   alongside the wallet's own self-attestation link.
 
 ### Unverified features
 
@@ -164,16 +171,35 @@ That feature's cell on `WALLET_DIRECTORY.md` then shows a ❌ next to your
 name, linked to your evidence, alongside the wallet's own claim -- so
 readers see the dispute rather than a plain, unchallenged ✅.
 
-## Regenerating the summary page
+## Previewing the summary page
 
-`WALLET_DIRECTORY.md` is generated, never hand-edited:
+`WALLET_DIRECTORY.md` is generated, never hand-edited, and never committed
+in a PR. Two GitHub Actions handle it:
+
+- **On every PR**, `.github/workflows/verify-wallet-directory.yml` builds
+  the page with your change merged into the latest `main`, checks that
+  every `proof:` file exists, and attaches the result as the
+  `wallet-directory-preview` artifact (open the PR's **Checks** tab ->
+  *Verify wallet directory* -> *Summary* to download it). It fails if your
+  PR changes `WALLET_DIRECTORY.md`. To drop it from your branch:
+  ```
+  git checkout origin/main -- WALLET_DIRECTORY.md
+  git commit -m "Drop generated WALLET_DIRECTORY.md"
+  ```
+- **After every merge to `main`**,
+  `.github/workflows/publish-wallet-directory.yml` rebuilds
+  `WALLET_DIRECTORY.md` from all `wallets/*.yaml` files and commits it. Because
+  the page is always rebuilt from everything on `main`, several PRs can be
+  approved and merged in any order without overwriting each other.
+
+To preview locally before opening a PR (no install step -- any Python 3
+works):
 
 ```
-python3 scripts/generate_table.py
+python3 scripts/generate_table.py --out WALLET_DIRECTORY.preview.md
 ```
 
-Run this locally after any change to a file under `wallets/` and commit
-the result. It has no dependencies to install. A GitHub Action
-(`.github/workflows/verify-wallet-directory.yml`) also regenerates and
-diffs this file on every PR touching `wallets/` or `scripts/`, and fails
-the check if it's out of sync, in case you forget.
+`WALLET_DIRECTORY.preview.md` is git-ignored, so it won't end up in your
+PR. Running the script with no `--out` overwrites `WALLET_DIRECTORY.md`
+itself; if you do that by accident, undo it with
+`git checkout -- WALLET_DIRECTORY.md` before committing.

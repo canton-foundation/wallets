@@ -13,5 +13,6 @@ public evidence backing each claim.
   truth for feature IDs, names, and required-feature tests.
 - **`proofs/`** -- evidence backing each claim, self-attested and
   independently verified, organized by wallet and feature.
-- **`scripts/generate_table.py`** -- regenerates `WALLET_DIRECTORY.md` from
-  the `wallets/` directory.
+- **`scripts/generate_table.py`** -- builds `WALLET_DIRECTORY.md` from
+  the `wallets/` directory. A GitHub Action runs it on `main` after every
+  merge, so contributors never commit `WALLET_DIRECTORY.md` themselves.

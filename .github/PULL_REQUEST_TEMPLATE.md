@@ -20,9 +20,11 @@ process.
 - [ ] `wallets/<wallet-name>.yaml` added or updated (self-attestation)
 - [ ] A heading added to `proofs/<wallet-name>/<wallet-name>-self-attestation.md`
       for every feature newly claimed as `supported: true`
-- [ ] `python3 scripts/generate_table.py` was run and the regenerated
-      `WALLET_DIRECTORY.md` is included in this PR (a CI check will catch
-      this if it's missed, but running it locally saves a round trip)
+- [ ] `WALLET_DIRECTORY.md` is **not** changed in this PR. It is rebuilt
+      automatically after merge (the CI check fails if it's included). To
+      preview your change, download the `wallet-directory-preview` artifact
+      from the PR's checks, or run
+      `python3 scripts/generate_table.py --out WALLET_DIRECTORY.preview.md`
 - [ ] If applying for the first time: confirmed membership in
       `#ext-temp-party-scaling` and set `slack_party_scaling_channel_joined: true`
 - [ ] If marking a feature as not supported: reason filled in under that
