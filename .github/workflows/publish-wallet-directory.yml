@@ -1,0 +1,105 @@
+name: Publish WALLET_DIRECTORY.md
+
+# Rebuilds WALLET_DIRECTORY.md from wallets/*.yaml after every merge to main
+# and commits it. Contributor PRs no longer commit this file, so several PRs
+# can be approved and merged on the same day in any order without
+# conflicting or dropping each other's wallets: the page is always rebuilt
+# from everything that is on main.
+#
+# Pushing to main:
+#   main is protected (PR + review required), and the default GITHUB_TOKEN
+#   cannot bypass that. To let this workflow commit straight to main, a
+#   Canton Foundation admin sets up a GitHub App once:
+#     1. Create a GitHub App owned by the canton-foundation org with
+#        Repository permissions -> Contents: Read and write, and install it
+#        on this repository only.
+#     2. Settings -> Branches -> main -> "Allow specified actors to bypass
+#        required pull requests": add the App.
+#     3. Settings -> Secrets and variables -> Actions: add the variable
+#        DIRECTORY_BOT_APP_ID (the App ID) and the secret
+#        DIRECTORY_BOT_PRIVATE_KEY (a private key generated for the App).
+#   Until that is done, the workflow falls back to opening (or updating) one
+#   pull request, "Regenerate WALLET_DIRECTORY.md", from the
+#   bot/wallet-directory branch. Merging that PR publishes the page. However
+#   many PRs merge in the meantime, there is only ever one such PR, and it
+#   is always rebuilt from the latest main.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "wallets/**"
+      - "scripts/generate_table.py"
+      - ".github/workflows/publish-wallet-directory.yml"
+  workflow_dispatch:
+
+# One run at a time; a queued run always rebuilds from the newest main, so
+# back-to-back merges can't publish an older page over a newer one.
+concurrency:
+  group: publish-wallet-directory
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get GitHub App token (if configured)
+        id: app-token
+        if: ${{ vars.DIRECTORY_BOT_APP_ID != '' }}
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.DIRECTORY_BOT_APP_ID }}
+          private-key: ${{ secrets.DIRECTORY_BOT_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ steps.app-token.outputs.token || github.token }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Rebuild WALLET_DIRECTORY.md
+        run: python3 scripts/generate_table.py
+
+      - name: Commit to main, or fall back to a pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HAS_APP: ${{ steps.app-token.outputs.token != '' }}
+        run: |
+          if git diff --quiet -- WALLET_DIRECTORY.md; then
+            echo "WALLET_DIRECTORY.md is already up to date."
+            exit 0
+          fi
+
+          if [ "$HAS_APP" = "true" ]; then
+            git config user.name "wallet-directory-bot"
+            git config user.email "wallet-directory-bot@users.noreply.github.com"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          fi
+          git add WALLET_DIRECTORY.md
+          git commit -m "Regenerate WALLET_DIRECTORY.md" \
+                     -m "Rebuilt from wallets/*.yaml after $(git rev-parse --short HEAD^) by the Publish WALLET_DIRECTORY.md workflow."
+
+          if git push origin HEAD:main; then
+            echo "Published WALLET_DIRECTORY.md to main."
+            exit 0
+          fi
+
+          echo "::warning::Could not push to main (branch protection). Opening/updating the regenerate PR instead. See the header of this workflow to let it commit directly."
+          git push --force origin HEAD:refs/heads/bot/wallet-directory
+          existing=$(gh pr list --head bot/wallet-directory --base main --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            echo "Updated existing PR #$existing."
+          else
+            gh pr create --base main --head bot/wallet-directory \
+              --title "Regenerate WALLET_DIRECTORY.md" \
+              --body "Automated: rebuilds the generated wallet directory page from \`wallets/*.yaml\` on \`main\`. It changes only \`WALLET_DIRECTORY.md\`. This PR is kept up to date by the *Publish WALLET_DIRECTORY.md* workflow; merging it publishes every wallet change merged so far."
+          fi

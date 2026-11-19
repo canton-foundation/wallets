@@ -1,39 +1,58 @@
-name: Verify WALLET_DIRECTORY.md
+name: Verify wallet directory
 
-# Regenerates WALLET_DIRECTORY.md from wallets/*.yaml and fails the PR if the
-# committed file doesn't match. Also checks that proof: / verified_by.proof
-# paths under proofs/ point at files that exist. Scripts use the Python
-# standard library only, so this workflow needs no install step.
+# Runs on every PR. It checks that the wallet directory page builds from the
+# PR's wallets/*.yaml (merged with the latest main), checks that proof:
+# and verified_by.proof paths under proofs/ point at files that exist, and
+# uploads the built page as a preview artifact.
+#
+# WALLET_DIRECTORY.md itself is NOT committed in PRs any more. The
+# "Publish WALLET_DIRECTORY.md" workflow rebuilds it on main after each
+# merge, so PRs that land on the same day can't conflict over it. This
+# check fails if a PR edits that file, so it doesn't creep back in.
+#
+# It runs on every PR (no paths filter), so it can be made a required
+# status check without blocking docs-only PRs. Scripts use the Python
+# standard library only, so there is no install step.
 
 on:
   pull_request:
-    paths:
-      - "wallets/**"
-      - "scripts/**"
-      - "proofs/**"
-      - "WALLET_DIRECTORY.md"
 
 jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The PR merge commit plus its first parent (main), so the
+          # PR's own changes can be listed below.
+          fetch-depth: 2
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Regenerate WALLET_DIRECTORY.md
-        run: python3 scripts/generate_table.py
-
-      - name: Fail if WALLET_DIRECTORY.md is out of date
+      - name: PR must not edit WALLET_DIRECTORY.md
+        if: ${{ github.head_ref != 'bot/wallet-directory' }}
         run: |
-          if ! git diff --exit-code -- WALLET_DIRECTORY.md; then
-            echo "::error file=WALLET_DIRECTORY.md::WALLET_DIRECTORY.md is out of date with wallets/*.yaml. Run 'python3 scripts/generate_table.py' locally and commit the regenerated file."
+          if git diff --name-only HEAD^1 HEAD | grep -qx 'WALLET_DIRECTORY.md'; then
+            echo "::error file=WALLET_DIRECTORY.md::Please remove WALLET_DIRECTORY.md from this PR. It is now rebuilt automatically after merge. To drop your copy: git checkout origin/main -- WALLET_DIRECTORY.md && git commit -m 'Drop generated WALLET_DIRECTORY.md'"
             exit 1
           fi
 
+      - name: Build the directory page
+        run: |
+          python3 scripts/generate_table.py --out "$RUNNER_TEMP/WALLET_DIRECTORY.md"
+          {
+            echo "### Wallet directory preview"
+            echo
+            echo "The page builds with this PR merged into main. Download the **wallet-directory-preview** artifact below to read it."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: wallet-directory-preview
+          path: ${{ runner.temp }}/WALLET_DIRECTORY.md
+
       - name: Verify proof file links
         run: python3 scripts/verify_proof_links.py
-        working-directory: .
-

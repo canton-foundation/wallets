@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Local preview of the generated directory page (see CONTRIBUTING.md)
+WALLET_DIRECTORY.preview.md

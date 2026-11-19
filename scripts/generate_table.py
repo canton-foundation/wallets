@@ -4,16 +4,20 @@ Regenerates WALLET_DIRECTORY.md from wallets/_feature_registry.yaml and
 wallets/*.yaml.
 
 Usage:
-    python3 scripts/generate_table.py
+    python3 scripts/generate_table.py --out WALLET_DIRECTORY.preview.md   # local preview (git-ignored)
     python3 scripts/generate_table.py --wallets-dir examples --out /tmp/demo.md
+    python3 scripts/generate_table.py   # writes WALLET_DIRECTORY.md; CI does this on main
 
 No install step, no dependencies -- this file is everything you need to run
 it. Just run it with plain python3. (It includes its own small YAML reader
 below, scoped to exactly the handful of YAML shapes used by wallets/*.yaml,
 so nothing needs to be pip installed.)
 
-Run this after adding or editing a wallet YAML file and commit the
-regenerated WALLET_DIRECTORY.md alongside your change.
+Contributors don't need to run this or commit WALLET_DIRECTORY.md: the
+"Publish WALLET_DIRECTORY.md" GitHub Action rebuilds it on main after every
+merge, and the PR check builds a preview. Run it locally with --out
+WALLET_DIRECTORY.preview.md if you want to see your change before opening
+a PR.
 
 Output is two tables, matching the split in Feature List.md: "Wallet
 Overview & Primary Canton Network Features" (Wallet Type, Canton Coin,
